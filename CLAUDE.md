@@ -15,6 +15,7 @@ Accounts are in the owner's real name. Earnings go to the owner; Claude's
 - Format: Google Sheets template with an Excel (.xlsx) copy. A free one-tab "lite" fee calculator collects emails and upsells the full product.
 - The brand is a shop name and style, not a fake person. Being open that AI
   helps make the products is fine.
+- Brand: MarginKite. US sellers only for v1. Honest pricing: no inflated "original" prices or permanent sales.
 
 ## Approval rules (always ask the owner first)
 - Any spending: ads, tools, listing fees. Show the amount, wait for a yes.
@@ -30,11 +31,15 @@ Keep this file and /notes up to date:
 Read all of these at the start of every session.
 
 ## Next steps
-1. Propose 5 brand names; check shop-name and domain availability.
+1. [done 2026-10-21: MarginKite] Propose 5 brand names; check shop-name and domain availability.
 2. Build the first template: profit and fee calculator for Etsy/Shopify sellers.
 3. Write the listing copy and make preview images.
 4. Owner opens Gumroad; Claude prepares the upload, owner approves going live.
 5. Plan social media: which platforms, posting schedule, first 2 weeks of posts.
+
+## Parked (revisit later)
+- Domain marginkite.com (2026-10-21): unregistered then; buy (about $10–15/yr, owner approval) when the lite calculator moves to a web page or before launch.
+- Hosted web app (2026-10-21): Phase 2; if the tracker sells, choose between the browser extension and a subscription web app (or both).
 
 ## Team
 Claude works as Tech Lead of the virtual team in `avengers-team/` (git submodule).
