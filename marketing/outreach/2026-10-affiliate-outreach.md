@@ -628,7 +628,7 @@ Follow-up rule unchanged: at most one, on day 7, only if there's no reply; never
 >
 > I'm Arman from MarginKite. We make Google Sheets and Excel tools showing sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
 >
-> Your DIY Shopify owners often come from Etsy. Our $12 Seller Profit Tracker shows Etsy and Shopify fees side by side for any product, and how many orders a month a Shopify plan needs before it pays for itself. (Our free calculator is Etsy-only, for viewers still selling there: https://marginkite.gumroad.com/l/free-fee-calculator)
+> Some of your DIY Shopify owners may be coming from Etsy. Our $12 Seller Profit Tracker shows Etsy and Shopify fees side by side for any product, and how many orders a month a Shopify plan needs before it pays for itself. (Our free calculator is Etsy-only, for viewers still selling there: https://marginkite.gumroad.com/l/free-fee-calculator)
 >
 > I've seen your rate card; we're starting with affiliate partners. If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
 >
