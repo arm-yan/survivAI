@@ -282,3 +282,216 @@ Gumroad's Affiliate Signup Form gives a public link where applicants describe th
 - [ ] Owner approves each message; owner reveals the YouTube emails for #7 and #8.
 - [ ] Before sending #4 and #6: check those creators' own shops for overlapping products (research flag).
 - [ ] FTC labelling: the signup blurb asks affiliates to label links. The individual messages don't, to stay under 150 words; the Tech Lead can add "please label it as an affiliate link" to the approval message.
+
+---
+
+## Batch 2 (DRAFT, not sent)
+
+Owner-approved targets 2026-10-24. Same rules as batch 1, with the owner's **reply-yes** affiliate wording (note at the top). Every creator fact comes from `research/2026-10-24-affiliates-and-partners.md` Part B (checked 2026-10-24). Nobody has been contacted.
+
+**US-only note:** #13 Andreas (Sweden), #19 Etsy Consultant (Cyprus) and #20 Tin Teddy (looks UK-based) may have many non-US viewers. The tracker uses US Etsy and Shopify fees, so those messages say so plainly.
+
+| # | Creator | Channel | Contact | Status |
+|---|---|---|---|---|
+| 11 | Kara Buntin | Contact page | https://acaketorememberblog.com/contact/ | draft |
+| 12 | Jered Robinson, Grow My Etsy Shop | Email (owner revealed from YouTube) | growmyetsyshop@gmail.com | draft |
+| 13 | Andreas, wtfamievendoing | Email (owner revealed from YouTube) | wtfamievendoing01@gmail.com | draft |
+| 14 | Simply Shawna | Email (owner revealed from YouTube) | simplyshawnahere@gmail.com | draft |
+| 19 | Etsy Consultant | YouTube business email | not yet revealed (YouTube daily limit); https://youtube.com/@etsyconsultant, About | draft, email pending |
+| 20 | Deborah Richardson, Craft Seller Success / Tin Teddy | Contact page | https://www.tinteddy.com/contact-me/ | draft |
+| 15 | eRank (tool company) | Contact page | https://members.erank.com/contact | draft (partnership note) |
+
+Same follow-up rule: at most one, 7 days later, only if there's no reply; never after a decline.
+
+---
+
+### 11. Kara Buntin
+
+**Channel:** contact page https://acaketorememberblog.com/contact/
+**Subject (if asked):** Etsy and Shopify profit tracker for handmade sellers *(52 characters)*
+
+> Hi Kara,
+>
+> I'm Arman from MarginKite, a small shop making Google Sheets and Excel tools that show sellers what they keep after fees (AI helps us build them, and every formula is tested against worked examples).
+>
+> You recommend Vela to handmade sellers who list on both Etsy and Shopify. Our $12 Seller Profit Tracker fits next to it: Etsy and Shopify fees side by side, profit per order, and a monthly dashboard.
+>
+> Our free Etsy fee calculator is yours to share, no strings: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
+>
+> Would you like a free copy to try? No obligation to post.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** handmade and home-business Etsy tips, US, 51.6K subs; Vela (an Etsy + Shopify tool), ShareMyStars, Etsy and Amazon affiliate links (research B #11; https://youtube.com/channel/UCDru9n0gVtJlapF93R1npSw). Her last regular upload was 2025-08-05, so the channel may be slowing; the blog contact page is the better route. Features: Price Calculator rows 13–27, Orders Log, Dashboard (build.py).
+
+**Follow-up (day 7):**
+> Hi Kara, one follow-up in case this got lost in the contact form. The free calculator is yours to share any time, and the review copy offer stands. No reply needed if it's not a fit. Arman, MarginKite
+
+---
+
+### 12. Jered Robinson: Grow My Etsy Shop
+
+**Channel:** email to growmyetsyshop@gmail.com (owner revealed from YouTube)
+**Subject:** A profit check to go with Etsy SEO *(34 characters)*
+
+> Hi Jered,
+>
+> I'm Arman from MarginKite, a small shop making Google Sheets and Excel tools that show Etsy sellers what they keep after fees (AI helps us build them, and every formula is tested against worked examples).
+>
+> Grow My Etsy Shop teaches handmade sellers Etsy SEO. Once the sales come in, the next question is what's left after fees. Our free Etsy fee calculator answers that for one item, and your coaching clients are welcome to it: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the full $12 tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
+>
+> Would you like a free copy of the tracker to look at? No obligation to post.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Etsy SEO for handmade sellers, YouTube + podcast, 3.64K subs, upload 2026-10-23, coaching audience; YT About (button) is the only contact (research B #12; https://youtube.com/@growmyetsyshop).
+
+**Follow-up (day 7):**
+> Hi Jered, following up once. The free calculator is there for your clients whenever it's useful, and I'm happy to send the tracker. No reply needed otherwise. Arman, MarginKite
+
+---
+
+### 13. Andreas: wtfamievendoing
+
+**Channel:** email to wtfamievendoing01@gmail.com (owner revealed from YouTube)
+**Subject:** A per-order profit sheet for US Etsy POD sellers *(48 characters)*
+
+> Hi Andreas,
+>
+> I'm Arman from MarginKite, a small shop making Google Sheets and Excel tools that show Etsy sellers what they keep after fees (AI helps us build them, and every formula is tested against worked examples).
+>
+> Your POD videos are about the numbers. Our $12 Seller Profit Tracker works out every Etsy fee, Offsite Ads and refund per order, plus the price you need for a target margin. To be upfront: it uses US Etsy and Shopify fees, so it suits your US viewers.
+>
+> Free Etsy fee calculator to share: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
+>
+> Want a free copy to test? No obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Etsy POD, Sweden-based, says he passed $1M in Etsy revenue (his claim, not repeated in the message); 8.11K subs, upload 2026-10-22; Printify affiliate described as "only tools I actually use" (research B #13; https://youtube.com/@wtfamievendoing). US-only: build.py v1 scope and notes/log.md (2026-10-21). Features: Orders Log cols N–V, Price Calculator rows 29–31.
+
+**Follow-up (day 7):**
+> Hi Andreas, a single follow-up. Happy to send the tracker so you can run one of your products through it. If it's not for your channel, no reply needed. Arman, MarginKite
+
+---
+
+### 14. Simply Shawna
+
+**Channel:** email to simplyshawnahere@gmail.com (owner revealed from YouTube)
+**Subject:** Profit after fees, alongside your listing tools *(47 characters)*
+
+> Hi Shawna,
+>
+> I'm Arman from MarginKite, a small shop making Google Sheets and Excel tools that show Etsy sellers what they keep after fees (AI helps us build them, and every formula is tested against worked examples).
+>
+> Your listing-analyzer tools help POD sellers with their listings. Ours covers a different step, what's left after the sale: every Etsy fee per order, Offsite Ads, refunds and monthly profit, in a $12 tracker. It doesn't touch listings or SEO.
+>
+> Free Etsy fee calculator for your community: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
+>
+> Would you like a free copy? No obligation to post.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Etsy POD, US, 48.2K subs, upload 2026-10-23, has a community; EverBee, Printful, Printify and Creative Fabrica affiliate links; Stan store; sells listing-analyzer tools, which research marks as adjacent, not competing (research B #14; https://youtube.com/@shawnalynn2083). The tracker has no listing or SEO features (build.py).
+
+**Follow-up (day 7):**
+> Hi Shawna, following up once on the profit tracker. The review copy offer stands; no reply needed if it's not a fit. Arman, MarginKite
+
+---
+
+### 19. Etsy Consultant
+
+**Channel:** YouTube business email, **email pending** (owner hit YouTube's daily reveal limit). Kept especially short: a large, daily channel.
+**Subject:** Free Etsy fee calculator for your viewers *(41 characters)*
+
+> Hi,
+>
+> I'm Arman from MarginKite. We make spreadsheet tools that show Etsy sellers what they keep after fees (AI helps us build them, and every formula is tested against worked examples). They use US fees.
+>
+> Your daily videos explain how Etsy works; our free fee calculator shows what each sale actually leaves: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the $12 tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
+>
+> Happy to send a free copy, with no obligation. Want one?
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Etsy platform mechanics, Cyprus, 80.4K subs, posts daily; own academy and Buy Me a Coffee, no affiliate links seen (research B #19; https://youtube.com/@etsyconsultant). The creator's name isn't in the research, hence "Hi,". The services page returned 406, so YouTube is the only route.
+
+**Follow-up (day 7):**
+> Hi, one short follow-up: the free calculator is there to share, and the tracker copy is yours if useful. No reply needed otherwise. Arman, MarginKite
+
+---
+
+### 20. Deborah Richardson: Craft Seller Success podcast / Tin Teddy
+
+**Channel:** contact page https://www.tinteddy.com/contact-me/
+**Subject (if asked):** A free Etsy fee calculator for your craft sellers *(49 characters)*
+
+> Hi Deborah,
+>
+> I'm Arman from MarginKite, a small shop making Google Sheets and Excel tools that show Etsy sellers what they keep after fees (AI helps us build them, and every formula is tested against worked examples).
+>
+> Craft Seller Success covers Etsy pricing and shipping for craft sellers. Our free Etsy fee calculator shows what one sale leaves after fees, which might suit your blog or newsletter readers: https://marginkite.gumroad.com/l/free-fee-calculator. To be upfront: it uses US Etsy fees, so it fits US sellers best.
+>
+> If you'd like to recommend our $12 tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
+>
+> Would you like a free copy of the tracker? No obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** podcast on Etsy SEO, shipping and pricing for craft sellers; says "over 30,000 downloads"; 40 episodes, latest 2025-05-03 (slow), so the pitch leads with the blog and newsletter, not the show; looks UK-based; Amazon Associates and Awin disclosures; sells craft graphics (research B #20; https://www.tinteddy.com/craft-seller-success-podcast/). Whether a newsletter exists is unverified, hence "blog or newsletter".
+
+**Follow-up (day 7):**
+> Hi Deborah, following up once in case the contact form message went astray. The free calculator is yours to share whenever it helps. No reply needed if it isn't a fit. Arman, MarginKite
+
+---
+
+### 15. eRank: partnership note to a tool company
+
+**Channel:** contact page https://members.erank.com/contact
+**Subject (if asked):** Free Etsy fee calculator for eRank users *(40 characters)*
+
+> Hello eRank team,
+>
+> I'm Arman from MarginKite, a small shop that makes Google Sheets and Excel tools showing Etsy sellers what they keep after fees (AI helps us build them, and every formula is tested against worked examples).
+>
+> eRank helps sellers with SEO and research. We cover what happens after the sale: our free Etsy fee calculator (https://marginkite.gumroad.com/l/free-fee-calculator) and a $12 Seller Profit Tracker with every fee, refund and monthly profit. We don't do SEO, so we complement rather than compete.
+>
+> Would you consider mentioning the free calculator in your newsletter, blog or resources page? I'm glad to send the full tracker for your team to review, with no obligation. The tracker also has a 40% affiliate option if that's ever useful.
+>
+> Thanks for reading,
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Etsy SEO tool, YouTube 19.1K subs; no profit features listed, so research rates it complementary and sees a guest-article or co-marketing pitch as more realistic than promoting a $12 sheet; runs its own 30% recurring affiliate program (research B #15; https://erank.com). The affiliate is one line, per the ticket. Whether eRank has a newsletter or resources page is unverified, hence "newsletter, blog or resources page". The FTC sentence is left out because no affiliate link is offered here; add it if they say yes.
+
+**Follow-up (day 7):**
+> Hello eRank team, a single follow-up on the free Etsy fee calculator. If a mention isn't a fit, no reply needed. Thanks, Arman, MarginKite
+
+---
+
+### Batch 2 checklist
+
+- [x] 7 targets as approved; channels from research B rows 11–15, 19, 20.
+- [x] One specific, sourced reference per creator; reply-yes line with "(about $3.86 after fees), paid automatically by Gumroad" and the FTC sentence (eRank: affiliate in one line, as briefed).
+- [x] "Tested against worked examples" wording; AI clause; free calculator link; review copy with no obligation; one follow-up each.
+- [x] US-only stated for the likely non-US audiences (#13, #19, #20).
+- [x] YouTube emails revealed for #12, #13 and #14.
+- [ ] Owner reveals the #19 Etsy Consultant email (pending: YouTube daily limit).
+- [ ] Owner approves each message before it is sent.
