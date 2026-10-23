@@ -293,13 +293,13 @@ Owner-approved targets 2026-10-24. Same rules as batch 1, with the owner's **rep
 
 | # | Creator | Channel | Contact | Status |
 |---|---|---|---|---|
-| 11 | Kara Buntin | Contact page | https://acaketorememberblog.com/contact/ | draft |
-| 12 | Jered Robinson, Grow My Etsy Shop | Email (owner revealed from YouTube) | growmyetsyshop@gmail.com | draft |
-| 13 | Andreas, wtfamievendoing | Email (owner revealed from YouTube) | wtfamievendoing01@gmail.com | draft |
-| 14 | Simply Shawna | Email (owner revealed from YouTube) | simplyshawnahere@gmail.com | draft |
+| 11 | Kara Buntin | none | contact page says she doesn't accept unsolicited products (2026-10-25) | SKIPPED (respecting her stated policy) |
+| 12 | Grow My Etsy Shop, Jered Robinson | Email (owner revealed) | growmyetsyshop@gmail.com | SENT 2026-10-25 |
+| 13 | Andreas, wtfamievendoing | Email (owner revealed) | wtfamievendoing01@gmail.com | SENT 2026-10-25 |
+| 14 | Simply Shawna | Email (owner revealed) | simplyshawnahere@gmail.com | SENT 2026-10-25 |
 | 19 | Etsy Consultant | YouTube business email | not yet revealed (YouTube daily limit); https://youtube.com/@etsyconsultant, About | draft, email pending |
-| 20 | Deborah Richardson, Craft Seller Success / Tin Teddy | Contact page | https://www.tinteddy.com/contact-me/ | draft |
-| 15 | eRank (tool company) | Contact page | https://members.erank.com/contact | draft (partnership note) |
+| 20 | Deborah Richardson, Craft Seller Success / Tin Teddy | Email (contact page mailto target) | elgyfu@tinteddy.com | SENT 2026-10-25 |
+| 15 | eRank (tool company) | Email (only public address) | support@erank.com | SENT 2026-10-25 (partnership note) |
 
 Same follow-up rule: at most one, 7 days later, only if there's no reply; never after a decline.
 
