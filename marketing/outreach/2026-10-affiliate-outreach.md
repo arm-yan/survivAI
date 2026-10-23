@@ -37,11 +37,11 @@ Follow-up rule: at most **one** follow-up, 7 days after the first message, only 
 
 > Hi Lizzie,
 >
-> I'm Arman from MarginKite, a small shop that makes Google Sheets and Excel tools showing Etsy sellers what they keep after fees (AI helps us build them; we check every formula by hand).
+> I'm Arman from MarginKite, a small shop that makes Google Sheets and Excel tools showing Etsy sellers what they keep after fees (AI helps us build them, and every formula is tested against worked examples).
 >
 > Your show has 256 episodes for beginner and mid-level Etsy sellers, and "am I actually making money?" is a beginner question. Our free one-tab Etsy fee calculator answers it, and you're welcome to share it, no strings: https://marginkite.gumroad.com/l/free-fee-calculator
 >
-> If you'd like to recommend the full $12 Seller Profit Tracker, our affiliate program pays 40% (about $3.86 a sale after fees), with a 30-day cookie, paid weekly by Gumroad once you reach $100. Signup: https://marginkite.gumroad.com/affiliates
+> If you'd like to recommend the full $12 Seller Profit Tracker, our affiliate program pays 40% (about $3.86 a sale after fees), with a 30-day cookie, paid weekly by Gumroad once you reach $100. Signup: https://marginkite.gumroad.com/affiliates (if you share it, please label it as an affiliate link, per FTC rules).
 >
 > Happy to send you a free copy to look at, with no obligation to mention it.
 >
@@ -65,13 +65,13 @@ Follow-up rule: at most **one** follow-up, 7 days after the first message, only 
 
 > Hi Sarah,
 >
-> I'm Arman from MarginKite. We make Google Sheets and Excel tools that show Etsy sellers what they keep after fees; AI helps us build them, and every formula is checked by hand.
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools that show Etsy sellers what they keep after fees; AI helps us build them, and every formula is tested against worked examples.
 >
 > The Handmade Shop covers Etsy strategy for physical and digital makers. Knowing which listings earn after fees and costs is part of that, and our $12 Seller Profit Tracker shows it per product and per month.
 >
 > Two things you're free to use or ignore:
 > - Our free Etsy fee calculator, to share with no strings: https://marginkite.gumroad.com/l/free-fee-calculator
-> - Our affiliate program: 40% of the $12 tracker (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100. Signup: https://marginkite.gumroad.com/affiliates
+> - Our affiliate program: 40% of the $12 tracker (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100. Signup: https://marginkite.gumroad.com/affiliates (if you share it, please label it as an affiliate link, per FTC rules).
 >
 > I'd be glad to send you a free copy to review, with no obligation to post. Want one?
 >
@@ -93,7 +93,7 @@ Follow-up rule: at most **one** follow-up, 7 days after the first message, only 
 
 > Hi Mandy,
 >
-> I'm Arman from MarginKite. We make spreadsheet tools that show Etsy sellers what they keep after fees; AI helps us build them, and we check every formula by hand.
+> I'm Arman from MarginKite. We make spreadsheet tools that show Etsy sellers what they keep after fees; AI helps us build them, and every formula is tested against worked examples.
 >
 > Your channel is about Etsy print-on-demand, where margins after Etsy fees and print cost are thin. Our $12 Seller Profit Tracker has a reverse mode: type a target margin and it gives the price to charge on Etsy and on Shopify.
 >
@@ -118,11 +118,11 @@ Follow-up rule: at most **one** follow-up, 7 days after the first message, only 
 
 > Hi Julie and Cody,
 >
-> I'm Arman from MarginKite. We make Google Sheets and Excel tools that show sellers what they keep after fees; AI helps us build them, and we check every formula by hand.
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools that show sellers what they keep after fees; AI helps us build them, and every formula is tested against worked examples.
 >
 > Crickets to Cha-Chings covers printables and digital products on both Etsy and Shopify. Our $12 Seller Profit Tracker puts Etsy and Shopify fees side by side for any product and shows how many orders a month a Shopify plan needs to pay for itself.
 >
-> If it suits your audience: free fee calculator to share, no strings (https://marginkite.gumroad.com/l/free-fee-calculator), and an affiliate program at 40% of the tracker (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100: https://marginkite.gumroad.com/affiliates
+> If it suits your audience: free fee calculator to share, no strings (https://marginkite.gumroad.com/l/free-fee-calculator), and an affiliate program at 40% of the tracker (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100: https://marginkite.gumroad.com/affiliates (if you share it, please label it as an affiliate link, per FTC rules).
 >
 > Would a free review copy be useful? No obligation to post.
 >
@@ -143,11 +143,11 @@ Follow-up rule: at most **one** follow-up, 7 days after the first message, only 
 
 > Hi Heather,
 >
-> I'm Arman from MarginKite. We make spreadsheet tools that show Etsy sellers what they keep after fees; AI helps us build them, and we check every formula by hand.
+> I'm Arman from MarginKite. We make spreadsheet tools that show Etsy sellers what they keep after fees; AI helps us build them, and every formula is tested against worked examples.
 >
 > Your channel covers running an Etsy print-on-demand business, and profit per listing after fees is where POD gets tight. Our $12 Seller Profit Tracker logs each order and works out Etsy fees, Offsite Ads, refunds and profit. Its sample-data version is easy to show on screen.
 >
-> Free calculator to share with your audience, no strings: https://marginkite.gumroad.com/l/free-fee-calculator. Affiliate program: 40% of the tracker (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100: https://marginkite.gumroad.com/affiliates
+> Free calculator to share with your audience, no strings: https://marginkite.gumroad.com/l/free-fee-calculator. Affiliate program: 40% of the tracker (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100: https://marginkite.gumroad.com/affiliates (if you share it, please label it as an affiliate link, per FTC rules).
 >
 > Could I send you a free copy to try? No obligation to post.
 >
@@ -168,11 +168,11 @@ Follow-up rule: at most **one** follow-up, 7 days after the first message, only 
 
 > Hi Grete,
 >
-> I'm Arman from MarginKite. We make Google Sheets and Excel tools that show Etsy sellers what they keep after fees; AI helps us build them, and we check every formula by hand.
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools that show Etsy sellers what they keep after fees; AI helps us build them, and every formula is tested against worked examples.
 >
 > Your content is about selling digital products on Etsy, and fee math is where many new sellers get surprised. Our free Etsy fee calculator is a no-strings link you could add for your audience: https://marginkite.gumroad.com/l/free-fee-calculator
 >
-> If you'd also recommend the full $12 Seller Profit Tracker, the affiliate program pays 40% (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100. Please use your tracker link for credit: https://marginkite.gumroad.com/affiliates
+> If you'd also recommend the full $12 Seller Profit Tracker, the affiliate program pays 40% (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100. Please use your tracker link for credit: https://marginkite.gumroad.com/affiliates (if you share it, please label it as an affiliate link, per FTC rules).
 >
 > I can send a free copy to review, with no obligation to post. Interested?
 >
@@ -193,11 +193,11 @@ Follow-up rule: at most **one** follow-up, 7 days after the first message, only 
 
 > Hi Emily,
 >
-> I'm Arman from MarginKite. We make spreadsheet tools that show Etsy sellers what they keep after fees; AI helps us build them, and we check every formula by hand.
+> I'm Arman from MarginKite. We make spreadsheet tools that show Etsy sellers what they keep after fees; AI helps us build them, and every formula is tested against worked examples.
 >
 > You share your own Etsy POD revenue numbers with your viewers. Our $12 Seller Profit Tracker turns revenue into profit: every Etsy fee per order, refunds, monthly overhead, and a 12-month dashboard.
 >
-> If it's useful to your audience: a free Etsy fee calculator to share, no strings (https://marginkite.gumroad.com/l/free-fee-calculator), and an affiliate program at 40% of the tracker (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100: https://marginkite.gumroad.com/affiliates
+> If it's useful to your audience: a free Etsy fee calculator to share, no strings (https://marginkite.gumroad.com/l/free-fee-calculator), and an affiliate program at 40% of the tracker (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100: https://marginkite.gumroad.com/affiliates (if you share it, please label it as an affiliate link, per FTC rules).
 >
 > Can I send you a free copy to try with your own numbers? No obligation to post.
 >
@@ -218,11 +218,11 @@ Follow-up rule: at most **one** follow-up, 7 days after the first message, only 
 
 > Hi Arriell,
 >
-> I'm Arman from MarginKite. We make Google Sheets and Excel tools that show Etsy sellers what they keep after fees; AI helps us build them, and we check every formula by hand.
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools that show Etsy sellers what they keep after fees; AI helps us build them, and every formula is tested against worked examples.
 >
 > Your Etsy POD videos list the tools you use, such as EverBee, Kittl and Printify. One thing those don't cover is profit after Etsy fees per order, which our $12 Seller Profit Tracker does, with a target-margin price for each product.
 >
-> Free fee calculator for your viewers, no strings: https://marginkite.gumroad.com/l/free-fee-calculator. Affiliate program: 40% of the tracker (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100: https://marginkite.gumroad.com/affiliates
+> Free fee calculator for your viewers, no strings: https://marginkite.gumroad.com/l/free-fee-calculator. Affiliate program: 40% of the tracker (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100: https://marginkite.gumroad.com/affiliates (if you share it, please label it as an affiliate link, per FTC rules).
 >
 > Want a free copy to test? No obligation to post.
 >
@@ -243,11 +243,11 @@ Follow-up rule: at most **one** follow-up, 7 days after the first message, only 
 
 > Hi Mark,
 >
-> I'm Arman from MarginKite. We make Google Sheets and Excel templates that show Etsy and Shopify sellers what they keep after fees; AI helps us build them, and we check every formula by hand.
+> I'm Arman from MarginKite. We make Google Sheets and Excel templates that show Etsy and Shopify sellers what they keep after fees; AI helps us build them, and every formula is tested against worked examples.
 >
 > You teach tax and bookkeeping to online resellers. For viewers who sell on Etsy, our $12 Seller Profit Tracker keeps an order log with every Etsy fee and refund, plus monthly expenses, so their numbers are tidy at year end. It isn't tax or accounting software, and it says so.
 >
-> If it's a useful resource: a free Etsy fee calculator anyone can share (https://marginkite.gumroad.com/l/free-fee-calculator), and an affiliate program at 40% of the tracker, 30-day cookie, paid by Gumroad: https://marginkite.gumroad.com/affiliates
+> If it's a useful resource: a free Etsy fee calculator anyone can share (https://marginkite.gumroad.com/l/free-fee-calculator), and an affiliate program at 40% of the tracker, 30-day cookie, paid by Gumroad: https://marginkite.gumroad.com/affiliates (if you share it, please label it as an affiliate link, per FTC rules).
 >
 > Would you like a free copy to review? No obligation.
 >
