@@ -314,7 +314,8 @@ table.sheet tr.gap td {{ height: 14px; background: #FAFAFA; font-size: 12px; col
       background: #fff; padding: 16px 30px 16px 16px; border-radius: 60px; box-shadow: 0 6px 20px rgba(31,58,95,.12); }}
 .co b {{ width: 54px; height: 54px; border-radius: 50%; background: {BRAND['coral']}; color: #fff; text-align: center;
         font: 800 32px/54px {BRAND['font']}; flex: none; }}
-.note {{ position: absolute; bottom: 26px; left: 0; right: 0; text-align: center; font-size: 24px; color: #8A8F99; }}
+.note {{ text-align: center; font-size: 24px; color: #8A8F99; }}
+body.with-note {{ padding-bottom: 150px; }}  /* keeps the bottom strip clear of gallery dots */
 .chart .ct {{ font: 700 30px {BRAND['font']}; fill: {BRAND['navy']}; }}
 .chart .ax {{ font: 500 22px {BRAND['font']}; fill: #4A4F59; }}
 .row {{ display: flex; gap: 34px; align-items: stretch; }}
@@ -364,11 +365,12 @@ KITE = (f'<svg width="64" height="64" viewBox="0 0 64 64"><path d="M32 4 L56 26 
 
 
 def page(headline, sub, stage, tag="Google Sheets + Excel", note=True):
-    return (f'<!doctype html><html><head><meta charset="utf-8">{FONT_LINK}<style>{CSS}</style></head><body>'
-            f'<div class="brand">{KITE}MarginKite<span class="tag">{html.escape(tag)}</span></div>'
+    return (f'<!doctype html><html><head><meta charset="utf-8">{FONT_LINK}<style>{CSS}</style></head>'
+            + ('<body class="with-note">' if note else "<body>")
+            + f'<div class="brand">{KITE}MarginKite<span class="tag">{html.escape(tag)}</span></div>'
             f"<h1>{headline}</h1>" + (f'<div class="sub">{sub}</div>' if sub else "")
-            + f'<div class="stage">{stage}</div>'
-            + (f'<div class="note">{SAMPLE_NOTE}</div>' if note else "") + FIT_JS + "</body></html>")
+            + f'<div class="stage">{stage}'
+            + (f'<div class="note">{SAMPLE_NOTE}</div>' if note else "") + "</div>" + FIT_JS + "</body></html>")
 
 
 def callouts(items):

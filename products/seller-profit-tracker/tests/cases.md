@@ -69,3 +69,5 @@ Profit = order total − refund − total fees − product cost − shipping cos
 - **S4:** shipped files with sample data evaluate with no `#` errors.
 - **S5:** the BLANK workbooks evaluate with no `#` errors on any formula cell. S1–S3 also cover the BLANK files.
 - **S0:** every sheet is protected without a password, and every formula cell is locked. S0 is reported only if it fails.
+
+Pending for next workbook release: mark Etsy listing $0.20, transaction 6.5%, Offsite Ads 15% VERIFIED (Etsy sell page, viewed 2026-10-23).
