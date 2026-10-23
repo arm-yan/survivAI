@@ -156,7 +156,7 @@ At 50% we earn about $6.00 per Personal sale and $7.00 per Commercial sale. Crea
 
 | | |
 |---|---|
-| Upload | One file: `MarginKite-Seller-Profit-Tracker.zip` [[PLACEHOLDER: designer builds this zip]] |
+| Upload | One file: `MarginKite-Seller-Profit-Tracker.zip` |
 | Inside the zip | `MarginKite-Seller-Profit-Tracker.xlsx` (sample data) · `MarginKite-Seller-Profit-Tracker-BLANK.xlsx` (empty) · `MarginKite-Buyer-Guide.pdf` (the Creative Market version, from `listing/buyer-guide-creative-market.md`) |
 | Delivery | Instant download from Creative Market after purchase. Nothing is shipped. |
 | Google Sheets | Upload an .xlsx and Save as Google Sheets, or use the optional copy links in the PDF |

@@ -22,7 +22,8 @@ import markdown
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "previews"))
-from build_previews import BRAND, FONT_LINK, KITE, find_browser  # noqa: E402
+from build_previews import BRAND, FONT_LINK, MARK, find_browser  # noqa: E402
+from mark import GAP_RATIO, wordmark_css  # noqa: E402  (on sys.path via build_previews)
 
 # (markdown source, PDF output). Pass a key on the command line to render only some, e.g.
 #   build_guide.py creative-market
@@ -36,9 +37,10 @@ CSS = f"""
 @page {{ size: Letter; margin: 0.5in 0.6in; }}
 * {{ box-sizing: border-box; }}
 body {{ font-family: {BRAND['font']}; color: {BRAND['ink']}; font-size: 10.5pt; line-height: 1.42; margin: 0; }}
-.top {{ display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 15pt; color: {BRAND['navy']};
+.top {{ display: flex; align-items: center; gap: {round(26 * GAP_RATIO)}px; font-weight: 800; font-size: 15pt; color: {BRAND['navy']};
        border-bottom: 3px solid {BRAND['teal']}; padding-bottom: 8px; margin-bottom: 12px; }}
 .top svg {{ width: 26px; height: 26px; }}
+{wordmark_css('.top .wm', 'light')}
 .top .tag {{ margin-left: auto; font-size: 9pt; color: #fff; background: {BRAND['teal']}; padding: 3px 10px;
             border-radius: 12px; font-weight: 700; }}
 h1 {{ font-size: 20pt; font-weight: 900; color: {BRAND['navy']}; margin: 0 0 6px; line-height: 1.15; }}
@@ -61,7 +63,7 @@ def render_html(md_text: str) -> str:
                   lambda m: f'<mark class="ph">[[PLACEHOLDER:{m.group(1)}]]</mark>', body)
     return (f'<!doctype html><html><head><meta charset="utf-8"><title>MarginKite Buyer Guide</title>{FONT_LINK}'
             f"<style>{CSS}</style></head><body>"
-            f'<div class="top">{KITE}MarginKite<span class="tag">{html.escape("Google Sheets + Excel")}</span></div>'
+            f'<div class="top">{MARK}<span class="wm">MarginKite</span><span class="tag">{html.escape("Google Sheets + Excel")}</span></div>'
             f"{body}</body></html>")
 
 

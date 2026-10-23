@@ -30,7 +30,9 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 PRODUCT = ROOT / "products" / "seller-profit-tracker"
 sys.path.insert(0, str(PRODUCT))
+sys.path.insert(0, str(PRODUCT.parent / "brand"))
 from build import FEE_ROWS, FEES_AS_OF_TEXT  # noqa: E402
+from mark import GAP_RATIO, SORA_LINK, mark_svg, wordmark_css  # noqa: E402  (logo defined once)
 
 OUT = HERE / "pins"
 W, H = 1000, 1500
@@ -249,9 +251,9 @@ BRAND = {
 }
 FONT_LINK = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
              '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" '
-             'rel="stylesheet">')
-KITE = (f'<svg width="54" height="54" viewBox="0 0 64 64"><path d="M32 4 L56 26 L32 60 L8 26 Z" fill="{BRAND["teal"]}"/>'
-        f'<path d="M32 4 L32 60 M8 26 L56 26" stroke="#fff" stroke-width="3"/></svg>')
+             'rel="stylesheet">') + SORA_LINK
+MARK_PX = 54
+MARK = mark_svg(MARK_PX, "light")  # the Margin bars mark (products/brand/mark.py)
 FOOT = (f"Current published US Etsy rates as of {FEES_AS_OF_TEXT} (from fee guides; check etsy.com/legal/fees). "
         "Estimates, not tax advice.")
 
@@ -260,7 +262,8 @@ CSS = f"""
 html, body {{ width: {W}px; height: {H}px; overflow: hidden; }}
 body {{ background: {BRAND['cream']}; font-family: {BRAND['font']}; color: {BRAND['ink']};
        display: flex; flex-direction: column; padding: 60px 64px 0; position: relative; }}
-.brand {{ display: flex; align-items: center; gap: 16px; font-weight: 800; font-size: 36px; color: {BRAND['navy']}; }}
+.brand {{ display: flex; align-items: center; gap: {round(MARK_PX * GAP_RATIO)}px; font-weight: 800; font-size: 36px; color: {BRAND['navy']}; }}
+{wordmark_css('.brand .wm', 'light')}
 .brand .tag {{ margin-left: auto; font-size: 24px; font-weight: 700; color: #fff; background: {BRAND['teal']};
               padding: 10px 22px; border-radius: 40px; }}
 .kicker {{ margin-top: 52px; font-size: 30px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: {BRAND['coral']}; }}
@@ -307,7 +310,7 @@ FULL_CTA = "MarginKite Seller Profit Tracker - $12"
 
 def page(kicker, headline, sub, stage, cta, cta_teal=True, tag="US Etsy sellers"):
     return (f'<!doctype html><html><head><meta charset="utf-8">{FONT_LINK}<style>{CSS}</style></head><body>'
-            f'<div class="brand">{KITE}MarginKite<span class="tag">{html.escape(tag)}</span></div>'
+            f'<div class="brand">{MARK}<span class="wm">MarginKite</span><span class="tag">{html.escape(tag)}</span></div>'
             f'<div class="kicker">{kicker}</div><h1>{headline}</h1>'
             + (f'<div class="sub">{sub}</div>' if sub else "")
             + f'<div class="stage">{stage}</div>'

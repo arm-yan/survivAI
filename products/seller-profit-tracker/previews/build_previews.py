@@ -37,6 +37,9 @@ PRODUCT = HERE.parent
 sys.path.insert(0, str(PRODUCT))
 from build import FEES_AS_OF_TEXT, LITE_NAME, TRACKER_NAME  # noqa: E402
 
+sys.path.insert(0, str(PRODUCT.parent / "brand"))
+from mark import GAP_RATIO, SORA_LINK, mark_svg, wordmark_css  # noqa: E402  (logo defined once)
+
 DIST = PRODUCT / "dist"
 THUMBS = HERE / "_thumbs"
 SIZE = 2000
@@ -59,7 +62,9 @@ BRAND = {
 }
 FONT_LINK = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
              '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" '
-             'rel="stylesheet">')
+             'rel="stylesheet">') + SORA_LINK
+MARK_PX = 64
+MARK = mark_svg(MARK_PX, "light")  # the Margin bars mark, light version
 SAMPLE_NOTE = "Illustration of the template; numbers are sample data."
 
 
@@ -283,7 +288,8 @@ CSS = f"""
 html, body {{ width: {SIZE}px; height: {SIZE}px; overflow: hidden; }}
 body {{ background: {BRAND['cream']}; font-family: {BRAND['font']}; color: {BRAND['ink']};
        display: flex; flex-direction: column; padding: 90px 100px 60px; position: relative; }}
-.brand {{ display: flex; align-items: center; gap: 22px; font-weight: 800; font-size: 46px; color: {BRAND['navy']}; }}
+.brand {{ display: flex; align-items: center; gap: {round(MARK_PX * GAP_RATIO)}px; font-weight: 800; font-size: 46px; color: {BRAND['navy']}; }}
+{wordmark_css('.brand .wm', 'light')}
 .brand .tag {{ margin-left: auto; font-size: 34px; font-weight: 700; color: #fff; background: {BRAND['teal']};
               padding: 12px 26px; border-radius: 40px; }}
 h1 {{ font-size: 128px; line-height: 1.02; font-weight: 900; color: {BRAND['navy']}; margin-top: 56px;
@@ -360,14 +366,13 @@ document.fonts.ready.then(() => {
 </script>
 """
 
-KITE = (f'<svg width="64" height="64" viewBox="0 0 64 64"><path d="M32 4 L56 26 L32 60 L8 26 Z" fill="{BRAND["teal"]}"/>'
-        f'<path d="M32 4 L32 60 M8 26 L56 26" stroke="#fff" stroke-width="3"/></svg>')
+
 
 
 def page(headline, sub, stage, tag="Google Sheets + Excel", note=True):
     return (f'<!doctype html><html><head><meta charset="utf-8">{FONT_LINK}<style>{CSS}</style></head>'
             + ('<body class="with-note">' if note else "<body>")
-            + f'<div class="brand">{KITE}MarginKite<span class="tag">{html.escape(tag)}</span></div>'
+            + f'<div class="brand">{MARK}<span class="wm">MarginKite</span><span class="tag">{html.escape(tag)}</span></div>'
             f"<h1>{headline}</h1>" + (f'<div class="sub">{sub}</div>' if sub else "")
             + f'<div class="stage">{stage}'
             + (f'<div class="note">{SAMPLE_NOTE}</div>' if note else "") + "</div>" + FIT_JS + "</body></html>")
@@ -512,7 +517,7 @@ body.wide.stacked {{ flex-direction: column; gap: 0; }}
 .wide .left {{ width: 600px; flex: none; display: flex; flex-direction: column; }}
 .wide .right {{ flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
                gap: 30px; min-width: 0; }}
-.wide .brand {{ font-size: 36px; gap: 18px; }}
+.wide .brand {{ font-size: 36px; }}
 .wide .right .row {{ gap: 22px; }}
 .wide .chart .ax {{ font-size: 19px; }}
 .wide .brand .tag {{ font-size: 20px; padding: 7px 14px; white-space: nowrap; }}
@@ -541,7 +546,7 @@ body.wide.stacked {{ flex-direction: column; gap: 0; }}
 
 
 def brand_bar(tag):
-    return f'<div class="brand">{KITE}MarginKite<span class="tag">{html.escape(tag)}</span></div>'
+    return f'<div class="brand">{MARK}<span class="wm">MarginKite</span><span class="tag">{html.escape(tag)}</span></div>'
 
 
 def page_wide(headline, sub, right, left_extra="", note=True, tag="Google Sheets + Excel"):
