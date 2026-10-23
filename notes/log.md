@@ -35,3 +35,4 @@
   - Lite: https://docs.google.com/spreadsheets/d/1f_ZIgOi_mZsbkiiI2cuk_XiTdiTpllCazWIeVIYob00/copy
   - Tech Lead check: exported all three from Sheets; no formula errors, dropdowns and charts kept, Dashboard total profit $77.00 matches the tests.
   - If the template changes, these masters must be re-uploaded (same file IDs if replaced via Drive "Manage versions").
+- Gumroad (2026-10-23): account marginkite.gumroad.com, display name MarginKite. Both products set up as UNPUBLISHED drafts: `l/profit-tracker` ($12, 7 covers, 3 files) and `l/free-fee-calculator` ($0+ pay what you want, 2 covers, 2 files + Sheets copy link). Tech Lead checked the public draft pages: names, prices, summaries, descriptions and covers match the approved copy. Lite master B24 now links to the tracker. Payout method not connected yet; Gumroad blocks publishing until it is.
