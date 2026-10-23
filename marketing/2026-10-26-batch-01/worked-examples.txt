@@ -1,0 +1,80 @@
+MarginKite batch 01 worked examples. Rates from build.py FEE_ROWS, as of 2026-10-21.
+Etsy: listing $0.20, transaction 6.5% of item + shipping, processing 3% + $0.25, Offsite Ads 15% / 12% capped at $100.00. Shopify (Settings default): Basic monthly $27.00, card 2.9% + $0.30.
+Rounding: each line is computed exactly, then shown to the cent (half up).
+
+## E1 (pins P01, P09; Reddit R1): $25 item + $5 shipping, no Offsite Ad
+Order total = item $25.00 + shipping charged $5.00 = $30.00
+Listing fee = $0.20
+Transaction fee = 6.5% x $30.00 = 1.950 -> $1.95
+Payment processing = 3% x $30.00 + $0.25 = 1.15 -> $1.15
+Total Etsy fees = 3.300 -> $3.30 = 11.00% of the order total
+
+Left after Etsy fees, before your costs = $30.00 - $3.30 = $26.70
+
+## E1b (pin P09): $30 item + free shipping, no Offsite Ad
+Order total = item $30.00 + shipping charged $0.00 = $30.00
+Listing fee = $0.20
+Transaction fee = 6.5% x $30.00 = 1.950 -> $1.95
+Payment processing = 3% x $30.00 + $0.25 = 1.15 -> $1.15
+Total Etsy fees = 3.300 -> $3.30 = 11.00% of the order total
+
+## E2 (pin P02; Reddit R2): $25 item + $5 shipping, sold through an Offsite Ad (15%)
+Order total = item $25.00 + shipping charged $5.00 = $30.00
+Listing fee = $0.20
+Transaction fee = 6.5% x $30.00 = 1.950 -> $1.95
+Payment processing = 3% x $30.00 + $0.25 = 1.15 -> $1.15
+Offsite Ads fee = 15% x $30.00 = 4.50 (under the $100 cap) -> $4.50
+Total Etsy fees = 7.800 -> $7.80 = 26.00% of the order total
+
+## E3 (pin P03; Reddit R3): the part of the fees that comes from $8 shipping charged
+Transaction fee on shipping = 6.5% x $8.00 = $0.52
+Processing % on shipping = 3% x $8.00 = $0.24
+Fees on the shipping line = $0.52 + $0.24 = $0.76 (the $0.25 fixed fee is per order, so not counted here)
+
+## E4a (pin P04; Reddit R4): $4 item, no shipping charged
+Order total = item $4.00 + shipping charged $0.00 = $4.00
+Listing fee = $0.20
+Transaction fee = 6.5% x $4.00 = 0.260 -> $0.26
+Payment processing = 3% x $4.00 + $0.25 = 0.37 -> $0.37
+Total Etsy fees = 0.830 -> $0.83 = 20.75% of the order total
+
+## E4b (pin P04; Reddit R4): $40 item, no shipping charged
+Order total = item $40.00 + shipping charged $0.00 = $40.00
+Listing fee = $0.20
+Transaction fee = 6.5% x $40.00 = 2.600 -> $2.60
+Payment processing = 3% x $40.00 + $0.25 = 1.45 -> $1.45
+Total Etsy fees = 4.250 -> $4.25 = 10.63% of the order total
+
+## E5 (pin P05): the free calculator's example item ($32 + $6.95 shipping)
+Order total = item $32.00 + shipping charged $6.95 = $38.95
+Listing fee = $0.20
+Transaction fee = 6.5% x $38.95 = 2.53175 -> $2.53
+Payment processing = 3% x $38.95 + $0.25 = 1.4185 -> $1.42
+Total Etsy fees = 4.15025 -> $4.15 = 10.66% of the order total
+
+Your costs = shipping cost $7.20 + cost to make $14.20 = $21.40
+Net profit = $38.95 - 4.15025 - $21.40 = 13.39975 -> $13.40
+Margin = 13.39975 / $38.95 = 34.4%
+
+## E6 (pin P06; Reddit R5): Offsite Ads cap on an $800 order
+15% x $800.00 = $120.00; cap is $100.00, so the fee is $100.00 (saves $20.00 vs no cap)
+Cap kicks in above $666.67 at 15% and above $833.33 at 12%
+
+## E7 (pin P07): Offsite Ads 15% vs 12% on a $50 order
+15% x $50.00 = $7.50; 12% x $50.00 = $6.00; difference $1.50
+
+## E8 (pin P08; Reddit R6): price for a 30% margin (Price Calculator reverse mode, C31)
+Inputs: unit cost $10.00, your shipping cost $5.00, shipping charged $5.00, target margin 30%, no Offsite Ad
+Fixed per order = listing $0.20 + processing fixed $0.25 + unit cost $10.00 + shipping cost $5.00 = $15.45
+Variable share = transaction 6.5% + processing 3% = 9.5%
+Order total needed = $15.45 / (1 - 9.5% - 30%) = $15.45 / 0.605 = 25.5372
+Item price = 25.5372 - shipping charged $5.00 = 20.5372 -> rounded up $20.54
+Check at $20.54: order total $25.54; fees $0.20 + $1.66 + $1.02 = $2.88; profit $25.54 - $2.88 - $15.00 = $7.66; margin 30.0%
+
+## E9 (pin P10; Reddit R7): when does a Shopify Basic plan pay for itself? ($25 item + $5 shipping)
+Etsy fees per order (E1) = $3.30
+Shopify fees per order before plan = 2.9% x $30.00 + $0.30 = $1.17
+Saved per order on Shopify = $3.30 - $1.17 = $2.13
+Orders a month to cover Basic (monthly billing) = $27.00 / $2.13 = 12.68 -> rounded up 13
+Leaves out the cost of bringing your own traffic to Shopify (ads, apps, theme). A floor, not a promise.
+
