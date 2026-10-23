@@ -27,7 +27,7 @@
 | 6 | Grete Creates | Email | hello@gretecreates.com | draft |
 | 7 | Emily Odio-Sutton | YouTube business email | **owner reveals email** (YouTube About, CAPTCHA) | draft |
 | 8 | Arriell Johnson | YouTube business email | **owner reveals email** (YouTube About, CAPTCHA) | draft |
-| 9 | Mark Tew, Not Your Dad's CPA | Contact form | https://notyourdadscpa.com/contact/ | draft |
+| 9 | Mark Tew, Not Your Dad's CPA | Email (owner provided) | mark@notyourdadscpa.com | SENT 2026-10-25 (reply-yes wording) |
 
 Follow-up rule: at most **one** follow-up, 7 days after the first message, only if there's no reply. Then stop. A "no" or "not now" ends it; we never follow up after a decline.
 
