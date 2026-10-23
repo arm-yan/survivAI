@@ -12,15 +12,18 @@
 - Affiliates should label affiliate links as such (FTC endorsement rules; research A6). The signup blurb says so; the messages leave it out to stay under 150 words (see checklist).
 - Affiliate signup page (live, per the Tech Lead 2026-10-24): https://marginkite.gumroad.com/affiliates
 
+
+**Wording change (owner, 2026-10-24):** don't send creators to the signup page. Messages say: *"If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules."* On a yes, Claude adds them via Gumroad > Affiliates > Add affiliate (by email), and Gumroad emails them their link. This applies to all unsent messages and to replies from #1 and #2.
+
 ## Overview
 
 | # | Creator | Channel | Contact | Status |
 |---|---|---|---|---|
-| 1 | Lizzie Smiley, How to Sell Your Stuff on Etsy | Email | hello@howtosellyourstuff.com | draft |
-| 2 | Sarah Waggoner, The Handmade Shop | Email | support@sarahjwaggoner.com | draft |
+| 1 | Lizzie Smiley, How to Sell Your Stuff on Etsy | Email | hello@howtosellyourstuff.com | SENT 2026-10-24 (signup-link wording) |
+| 2 | Sarah Waggoner, The Handmade Shop | Email | support@sarahjwaggoner.com | SENT 2026-10-24 (signup-link wording) |
 | 3 | Simply POD with Mandy | Contact page (email shown on page) | https://studiomdesignsco.com/contact | draft |
 | 4 | Gold City Ventures (Julie Berninger, Cody Berman) | Contact page / team email | https://goldcityventures.com/contact/ (team [at] goldcityventures [dot] com, partly unverified) | draft |
-| 5 | Heather Johnson, HeatherXStudio | Email | hello@heatherxstudio.com | draft |
+| 5 | Heather Johnson, HeatherXStudio | Email | hello@heatherxstudio.com | SENT 2026-10-25 (reply-yes wording) |
 | 6 | Grete Creates | Email | hello@gretecreates.com | draft |
 | 7 | Emily Odio-Sutton | YouTube business email | **owner reveals email** (YouTube About, CAPTCHA) | draft |
 | 8 | Arriell Johnson | YouTube business email | **owner reveals email** (YouTube About, CAPTCHA) | draft |
