@@ -29,3 +29,9 @@
   - Gumroad, Etsy and Pinterest accounts;
   - checking Etsy's fee page (https://www.etsy.com/legal/fees/) so the Etsy rows can be marked VERIFIED;
   - approval of any Etsy shop setup fee, if Etsy charges one, before opening the shop.
+- Google Sheets master copies created 2026-10-23 in marginkite.shop@gmail.com Drive (shared "Anyone with the link: Viewer"). Buyer links use `/copy` instead of `/edit`:
+  - Tracker (sample data): https://docs.google.com/spreadsheets/d/1EC3WQBv85J-L67KSHyWd0U1QExs7YLxZFE5qH7lfojw/copy
+  - Tracker (BLANK): https://docs.google.com/spreadsheets/d/1I5_ppRbvAYHL0KJ4ljvBSgQvCpiCP-S8ohdihBVczeo/copy
+  - Lite: https://docs.google.com/spreadsheets/d/1f_ZIgOi_mZsbkiiI2cuk_XiTdiTpllCazWIeVIYob00/copy
+  - Tech Lead check: exported all three from Sheets; no formula errors, dropdowns and charts kept, Dashboard total profit $77.00 matches the tests.
+  - If the template changes, these masters must be re-uploaded (same file IDs if replaced via Drive "Manage versions").
