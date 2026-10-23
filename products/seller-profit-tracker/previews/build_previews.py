@@ -513,7 +513,8 @@ body.wide.stacked {{ flex-direction: column; gap: 0; }}
 .wide .right {{ flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
                gap: 30px; min-width: 0; }}
 .wide .brand {{ font-size: 36px; gap: 18px; }}
-.wide .right .row {{ gap: 24px; }}
+.wide .right .row {{ gap: 22px; }}
+.wide .chart .ax {{ font-size: 19px; }}
 .wide .brand .tag {{ font-size: 20px; padding: 7px 14px; white-space: nowrap; }}
 .wide .tabbar {{ gap: 2px; padding: 8px 12px; overflow: hidden; }}
 .wide .tab {{ font-size: 18px; padding: 6px 10px; white-space: nowrap; }}
@@ -576,8 +577,8 @@ def images_cm(t: Book):
     out["cm-01-hero.png"] = page_wide(
         "See your real profit after every <em>Etsy &amp; Shopify</em> fee", "MarginKite Seller Profit Tracker",
         sheet_card(dash, t, D, max_h=330, max_w=990)
-        + f'<div class="row"><div class="panel" style="padding:16px">{column_chart(labels[:k], profits[:k], w=420, h=380)}</div>'
-          f'<div class="panel" style="padding:16px">{bar_chart(fee_labels, fee_vals, w=500, h=380)}</div></div>')
+        + f'<div class="row"><div class="panel" style="padding:12px">{column_chart(labels[:k], profits[:k], w=460, h=380)}</div>'
+          f'<div class="panel" style="padding:12px">{bar_chart(fee_labels, fee_vals, w=470, h=380)}</div></div>')
 
     pc = render_range(t, PC, list(range(3, 28)), cols("B", "D"),
                       marks={"C22": 1, "D22": 1, "C25": 2, "D25": 2, "D21": 3})

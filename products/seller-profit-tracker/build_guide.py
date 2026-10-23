@@ -5,7 +5,8 @@ Usage (from the repo root):
 
 Uses the MarginKite style from previews/build_previews.py and headless Edge --print-to-pdf.
 [[PLACEHOLDER: ...]] markers stay visible and highlighted until the owner fills them in;
-then re-run this script. The listing has no lite guide, so only the main PDF is built.
+then re-run this script. Builds the main guide and the Creative Market guide (no Gumroad
+references, links only to the Google Sheets copies and the support email).
 """
 
 from __future__ import annotations
@@ -23,8 +24,13 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "previews"))
 from build_previews import BRAND, FONT_LINK, KITE, find_browser  # noqa: E402
 
-SOURCE = HERE / "listing" / "buyer-guide.md"
-OUT = HERE / "dist" / "MarginKite-Buyer-Guide.pdf"
+# (markdown source, PDF output). Pass a key on the command line to render only some, e.g.
+#   build_guide.py creative-market
+GUIDES = {
+    "main": (HERE / "listing" / "buyer-guide.md", HERE / "dist" / "MarginKite-Buyer-Guide.pdf"),
+    "creative-market": (HERE / "listing" / "buyer-guide-creative-market.md",
+                        HERE / "dist" / "creative-market" / "MarginKite-Buyer-Guide.pdf"),
+}
 
 CSS = f"""
 @page {{ size: Letter; margin: 0.5in 0.6in; }}
@@ -59,22 +65,29 @@ def render_html(md_text: str) -> str:
             f"{body}</body></html>")
 
 
-def main():
-    doc = render_html(SOURCE.read_text(encoding="utf-8"))
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    browser = find_browser()
+def render(source: Path, out: Path, browser: str):
+    doc = render_html(source.read_text(encoding="utf-8"))
+    out.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
         page = tmp / "guide.html"
         page.write_text(doc, encoding="utf-8")
         subprocess.run([browser, "--headless=new", "--disable-gpu", "--no-first-run", f"--user-data-dir={tmp / 'p'}",
                         "--no-pdf-header-footer", "--virtual-time-budget=15000",
-                        f"--print-to-pdf={OUT}", page.as_uri()], check=True, capture_output=True, timeout=120)
-    data = OUT.read_bytes()
+                        f"--print-to-pdf={out}", page.as_uri()], check=True, capture_output=True, timeout=120)
+    # Fixed creation/modification dates (same length, so the xref offsets stay valid) for repeatable output.
+    data = re.sub(rb"/(CreationDate|ModDate)(\s*)\(D:\d{14}", rb"/\1\2(D:20261021000000", out.read_bytes())
+    out.write_bytes(data)
     pages = len(re.findall(rb"/Type\s*/Page(?!s)", data))
     links = sorted(set(u.decode() for u in re.findall(rb"/URI\s*\(([^)]*)\)", data)))
-    print(f"Built {OUT} ({pages} page{'s' if pages != 1 else ''}); links: {links}")
+    print(f"Built {out} ({pages} page{'s' if pages != 1 else ''}); links: {links}")
 
+
+def main():
+    keys = sys.argv[1:] or list(GUIDES)
+    browser = find_browser()
+    for key in keys:
+        render(*GUIDES[key], browser)
 
 if __name__ == "__main__":
     main()
