@@ -97,7 +97,7 @@ Follow-up rule: at most **one** follow-up, 7 days after the first message, only 
 >
 > Your channel is about Etsy print-on-demand, where margins after Etsy fees and print cost are thin. Our $12 Seller Profit Tracker has a reverse mode: type a target margin and it gives the price to charge on Etsy and on Shopify.
 >
-> You already list tool links for your viewers. If this one earns a place, our affiliate program pays 40% (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100: https://marginkite.gumroad.com/affiliates. There's also a free Etsy fee calculator anyone can share: https://marginkite.gumroad.com/l/free-fee-calculator
+> You already list tool links for your viewers. If this one earns a place, our affiliate program pays 40% (about $3.86 a sale after fees), 30-day cookie, paid weekly by Gumroad from $100: https://marginkite.gumroad.com/affiliates (please label it as an affiliate link, per FTC rules). There's also a free Etsy fee calculator anyone can share: https://marginkite.gumroad.com/l/free-fee-calculator
 >
 > Can I send you a free copy to try? No obligation to post.
 >
