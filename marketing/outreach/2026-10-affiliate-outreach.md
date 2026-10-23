@@ -298,7 +298,7 @@ Owner-approved targets 2026-10-24. Same rules as batch 1, with the owner's **rep
 | 13 | Andreas, wtfamievendoing | Email (owner revealed) | wtfamievendoing01@gmail.com | SENT 2026-10-25 |
 | 14 | Simply Shawna | Email (owner revealed) | simplyshawnahere@gmail.com | SENT 2026-10-25 |
 | 19 | Etsy Consultant | YouTube business email | not yet revealed (YouTube daily limit); https://youtube.com/@etsyconsultant, About | draft, email pending |
-| 20 | Deborah Richardson, Craft Seller Success / Tin Teddy | Email (contact page mailto target) | elgyfu@tinteddy.com | SENT 2026-10-25 |
+| 20 | Deborah Richardson, Craft Seller Success / Tin Teddy | Email | elgyfu@ bounced (mailbox full); deborah@ bounced (message blocked) | DROPPED 2026-10-25 (both addresses bounced) |
 | 15 | eRank (tool company) | Email (only public address) | support@erank.com | SENT 2026-10-25 (partnership note) |
 
 Same follow-up rule: at most one, 7 days later, only if there's no reply; never after a decline.
