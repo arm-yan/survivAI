@@ -320,6 +320,8 @@ Same follow-up rule: at most one, 7 days later, only if there's no reply; never 
 >
 > If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
 >
+> If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
 > Would you like a free copy to try? No obligation to post.
 >
 > Arman, MarginKite
@@ -344,6 +346,8 @@ Same follow-up rule: at most one, 7 days later, only if there's no reply; never 
 > Grow My Etsy Shop teaches handmade sellers Etsy SEO. Once the sales come in, the next question is what's left after fees. Our free Etsy fee calculator answers that for one item, and your coaching clients are welcome to it: https://marginkite.gumroad.com/l/free-fee-calculator
 >
 > If you'd like to recommend the full $12 tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
+>
+> If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
 >
 > Would you like a free copy of the tracker to look at? No obligation to post.
 >
@@ -372,6 +376,8 @@ Same follow-up rule: at most one, 7 days later, only if there's no reply; never 
 >
 > If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
 >
+> If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
 > Want a free copy to test? No obligation.
 >
 > Arman, MarginKite
@@ -399,6 +405,8 @@ Same follow-up rule: at most one, 7 days later, only if there's no reply; never 
 >
 > If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
 >
+> If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
 > Would you like a free copy? No obligation to post.
 >
 > Arman, MarginKite
@@ -424,6 +432,8 @@ Same follow-up rule: at most one, 7 days later, only if there's no reply; never 
 >
 > If you'd like to recommend the $12 tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
 >
+> If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
 > Happy to send a free copy, with no obligation. Want one?
 >
 > Arman, MarginKite
@@ -448,6 +458,8 @@ Same follow-up rule: at most one, 7 days later, only if there's no reply; never 
 > Craft Seller Success covers Etsy pricing and shipping for craft sellers. Our free Etsy fee calculator shows what one sale leaves after fees, which might suit your blog or newsletter readers: https://marginkite.gumroad.com/l/free-fee-calculator. To be upfront: it uses US Etsy fees, so it fits US sellers best.
 >
 > If you'd like to recommend our $12 tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
+>
+> If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
 >
 > Would you like a free copy of the tracker? No obligation.
 >
