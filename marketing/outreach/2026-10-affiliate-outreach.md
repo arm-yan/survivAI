@@ -507,3 +507,422 @@ Same follow-up rule: at most one, 7 days later, only if there's no reply; never 
 - [x] YouTube emails revealed for #12, #13 and #14.
 - [ ] Owner reveals the #19 Etsy Consultant email (pending: YouTube daily limit).
 - [ ] Owner approves each message before it is sent.
+
+---
+
+## Batch 3 (DRAFT, not sent)
+
+The round 2 top 15 from `research/2026-10-25-partners-round-2.md` (Ticket #22, checked 2026-10-24; "R2 #n" below = its ranked table). Standard wording as in batches 1–2: reply-yes affiliate line, FTC sentence, flat-fee line only where the partner publishes no prices. Nobody has been contacted; the owner approves each message.
+
+**Skipped:** none of the top 15 is marked competitor or INACTIVE. The research already left those out of the 15: POD Seller Studio (INACTIVE), SellerAIReady (partial overlap), How To Shopify (INACTIVE), MintedTools (competitor).
+
+**Facts that shape the wording (build.py):**
+- The **free calculator is Etsy-only** (`build_lite()`). Shopify messages say so and offer it for viewers who also sell on, or are coming from, Etsy.
+- The tracker's Orders Log accepts **Etsy or Shopify** orders only (platform list "Etsy,Shopify"). It can't log craft-fair or Amazon sales, so the messages don't suggest it can.
+- **US fees only.** Messages to likely non-US partners say so (#1 UK, #2 Portugal, #9 UK/US, #14 UK host).
+- Etsy vs Shopify per item and "how many orders a month before a Shopify plan pays for itself": Price Calculator rows 13–27 and 33–40.
+
+| # | Partner | Type | Channel | Contact | Status |
+|---|---|---|---|---|---|
+| 1 | Living The Hustle (Jessa Bellman) | Resource blog | form | https://livingthehustle.co.uk/contact/ | draft |
+| 2 | Love Eat Travel Repeat (Janeen) | Resource blog | form (contact page) | https://loveeattravelrepeat.com/contact-us/ | draft |
+| 3 | Nancy Badillo | Resource blog | email | info@nancybadillo.com | draft |
+| 4 | Ed Codes (Eduard) | Shopify YouTube + newsletter (public prices) | email | hi@ed.codes | draft |
+| 5 | Handmade Seller Magazine | Newsletter (no public prices) | email | info@handmadeseller.com | draft |
+| 6 | Talkin With Tonio (Antonio Williams) | Shopify YouTube | **owner reveals** | https://youtube.com/@TalkinWithTonio, About | draft |
+| 7 | Shopify Success (Julia) | Shopify YouTube | **owner reveals** | https://youtube.com/@Shopify-Success, About | draft |
+| 8 | The Side Hustler (Lee Warren-Blake) | Resource blog | form | https://thesidehustler.blog/contact-us/ | draft |
+| 9 | Style Factory | Shopify YouTube + blog | form | https://www.stylefactoryproductions.com/contact | draft |
+| 10 | Colorfully Sarah | Maker YouTube | **owner reveals** | https://youtube.com/@colorfullysarah, About | draft |
+| 11 | McKenna Beverly | Shopify YouTube | form (shop contact page) | https://beverlytemplatesco.com/pages/contact-1 | draft |
+| 12 | eCommerce Badassery (Jessica Totillo Coster) | Shopify podcast | **application** (owner submits) | https://ecommercebadassery.com/podcast-guest-application/ | draft (guest pitch) |
+| 13 | Ecommerce Coffee Break (Claus Lauter) | Newsletter + podcast (public prices) | email | hello@ecommercecoffeebreak.com | draft |
+| 14 | Winning With Shopify (Spec agency) | Shopify podcast (no public prices) | form | https://wwspodcast.com/sponsor-the-show | draft |
+| 15 | Sun Milk (Ashley) | Maker YouTube | email | hello@sunmilkshop.com | draft |
+
+Follow-up rule unchanged: at most one, on day 7, only if there's no reply; never after a decline.
+
+---
+
+### B3-1. Living The Hustle (Jessa Bellman)
+
+**Channel:** form https://livingthehustle.co.uk/contact/
+**Subject (if asked):** An Etsy fee tool for your recommended tools page *(48 characters)*
+
+> Hi Jessa,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing Etsy sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Your recommended-tools page already includes other creators' small digital products. Could our free Etsy fee calculator or the $12 Seller Profit Tracker earn a place there? Free calculator: https://marginkite.gumroad.com/l/free-fee-calculator. To be upfront, both use US Etsy fees.
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Happy to send a free copy to review, no obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** the tools page lists about 40 other creators' $7–$49 digital products under "I'm an affiliate for these products"; she sells an Etsy shop planner (not a profit sheet); probably UK-based (R2 #1; https://livingthehustle.co.uk/my-recommended-tools-trainings/).
+
+**Follow-up (day 7):**
+> Hi Jessa, one follow-up in case the form message got lost. The free calculator is yours to list any time, and the review copy offer stands. No reply needed if it's not a fit. Arman, MarginKite
+
+---
+
+### B3-2. Love Eat Travel Repeat (Janeen)
+
+**Channel:** form on https://loveeattravelrepeat.com/contact-us/
+**Subject (if asked):** A margin-to-price tool for your Etsy POD tools page *(51 characters)*
+
+> Hi Janeen,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing Etsy sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Your tools page for Etsy POD sellers lists eRank and Printify. Our $12 Seller Profit Tracker could sit next to them: type a target margin and it gives the price to charge. It uses US Etsy fees. Free calculator for your readers: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Want a free copy to review? No obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Etsy POD coach; tools page https://loveeattravelrepeat.com/tools-for-etsy-sellers/ with eRank and Ehunt affiliate links, Printify, Canva; "6,000+" newsletter (her claim); based in Portugal (R2 #2). Reverse mode = Price Calculator rows 29–31.
+
+**Follow-up (day 7):**
+> Hi Janeen, following up once on the tools-page idea. The free calculator is yours to share, and the review copy offer stands. No reply needed otherwise. Arman, MarginKite
+
+---
+
+### B3-3. Nancy Badillo
+
+**Channel:** email info@nancybadillo.com
+**Subject:** A one-time-price profit sheet for your tools page *(49 characters)*
+
+> Hi Nancy,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing Etsy sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Your Etsy business tools page lists costing tools such as Craftybase and Alura. For sellers who don't need inventory software, our $12 Seller Profit Tracker is a one-time option: every Etsy fee, product cost and profit per order. Free calculator: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> Could either earn a place on your page? If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Happy to send a free review copy, no obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** tools page https://nancybadillo.com/etsy-business-tools/ lists Craftybase, Putler, Alura and others ("may earn a commission"); Etsy SEO and Pinterest coach (R2 #3). Our traffic is also Pinterest-led (notes/log.md).
+
+**Follow-up (day 7):**
+> Hi Nancy, a single follow-up on the tools page idea. The review copy is yours if useful; no reply needed if not. Arman, MarginKite
+
+---
+
+### B3-4. Ed Codes (Eduard)
+
+**Channel:** email hi@ed.codes (public rate card, so no rates request)
+**Subject:** Etsy vs Shopify fees for your DIY store owners *(46 characters)*
+
+> Hi Eduard,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Your DIY Shopify owners often come from Etsy. Our $12 Seller Profit Tracker shows Etsy and Shopify fees side by side for any product, and how many orders a month a Shopify plan needs before it pays for itself. (Our free calculator is Etsy-only, for viewers still selling there: https://marginkite.gumroad.com/l/free-fee-calculator)
+>
+> I've seen your rate card; we're starting with affiliate partners. If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
+>
+> Want a free copy to try? No obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** hands-on Shopify for DIY store owners, 34.1K subs, newsletter "2,700+"; resources page with referral links; public prices from $125 (R2 #4 and Paid options; https://ed.codes/advertise). "Often come from Etsy" is our angle, not his claim; **owner: soften to "may come from Etsy" if preferred.**
+
+**Follow-up (day 7):**
+> Hi Eduard, following up once on the Etsy vs Shopify tracker. Happy to send a copy; no reply needed if it's not a fit. Arman, MarginKite
+
+---
+
+### B3-5. Handmade Seller Magazine
+
+**Channel:** email info@handmadeseller.com (from "email us at info at handmadeseller.com")
+**Subject:** A Tech Solutions idea: real profit after Etsy fees *(50 characters)*
+
+> Hello,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing handmade sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Would a short Tech Solutions mention suit your readers? The takeaway would be our free Etsy fee calculator (https://marginkite.gumroad.com/l/free-fee-calculator), with the $12 Seller Profit Tracker for sellers who want every order and month tracked. It uses US Etsy fees.
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> I can send the tracker for review, no obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** business magazine for artisan sellers on beehiiv; "Tech Solutions" and "Platform Report" sections; Fall Issue 92 on 2026-10-22; "readers in over 20 countries", hence the US-fees line; works with advertisers, no prices (R2 #5; https://www.handmadeseller.com/about-us-contact).
+
+**Follow-up (day 7):**
+> Hello, following up once on the Tech Solutions idea. The free calculator is there for your readers whenever it fits. No reply needed otherwise. Arman, MarginKite
+
+---
+
+### B3-6. Talkin With Tonio (Antonio Williams)
+
+**Channel:** YouTube business email, **owner reveals**
+**Subject:** Per-product profit for small Shopify stores *(43 characters)*
+
+> Hi Antonio,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> You talk about turning a store into a profitable business. Our $12 Seller Profit Tracker shows profit per product and per order after Shopify's card fees and plan cost, and side by side with Etsy for anyone selling there too. (The free calculator is Etsy-only: https://marginkite.gumroad.com/l/free-fee-calculator)
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Want a free copy? No obligation to post.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Shopify YouTube, 23.5K subs, last upload 2026-10-06; covers turning a store "into a profitable business"; owns a clothing brand; Shopify affiliate link (R2 #6; https://youtube.com/@TalkinWithTonio). Shopify card % + fixed fee and plan cost per order: Settings C13–C15, Price Calculator row 21.
+
+**Follow-up (day 7):**
+> Hi Antonio, one follow-up on the profit tracker. The review copy offer stands; no reply needed if it's not a fit. Arman, MarginKite
+
+---
+
+### B3-7. Shopify Success (Julia)
+
+**Channel:** YouTube business email, **owner reveals** (site contact unverified)
+**Subject:** "Is Shopify worth it?" with real numbers *(40 characters)*
+
+> Hi Julia,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Your beginners ask whether Shopify is worth it. Our $12 Seller Profit Tracker answers that with their own numbers: Etsy and Shopify fees side by side, and how many orders a month before a Shopify plan pays for itself. For viewers still on Etsy, our free calculator is Etsy-only: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Can I send you a free copy? No obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Shopify setup and growth for beginners, US, 85.3K subs, last upload 2026-10-20; Omnisend, Shopify trial, Airwallex, Modash affiliate links; the research describes her audience as beginners asking "is Shopify worth it?" (R2 #7; https://youtube.com/@Shopify-Success). Break-even: Price Calculator rows 33–40.
+
+**Follow-up (day 7):**
+> Hi Julia, following up once. Happy to send the tracker so you can try the Shopify break-even on a sample product. No reply needed otherwise. Arman, MarginKite
+
+---
+
+### B3-8. The Side Hustler (Lee Warren-Blake)
+
+**Channel:** form https://thesidehustler.blog/contact-us/
+**Subject (if asked):** A free Etsy fee calculator for your printable sellers *(53 characters)*
+
+> Hi Lee,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing Etsy sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> You write for beginners selling Etsy printables and print-on-demand. Our free Etsy fee calculator is a no-risk link for a post or your Top Picks: https://marginkite.gumroad.com/l/free-fee-calculator. It uses US Etsy fees. The $12 Seller Profit Tracker is the next step for sellers with regular orders.
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Want a free review copy? No obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** side-income blog: Etsy printables, POD, Pinterest; "Top Picks" list and Affiliate Disclosure page; the contact form invites "partnerships, guest posts, or interviews" (R2 #8; https://thesidehustler.blog).
+
+**Follow-up (day 7):**
+> Hi Lee, one follow-up in case the form message got lost. The free calculator is yours to link any time. No reply needed if it's not a fit. Arman, MarginKite
+
+---
+
+### B3-9. Style Factory
+
+**Channel:** form https://www.stylefactoryproductions.com/contact
+**Subject (if asked):** An Etsy vs Shopify fee comparison idea *(38 characters)*
+
+> Hello Style Factory team,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Your platform comparisons don't seem to include an Etsy-vs-Shopify fee breakdown. Our $12 Seller Profit Tracker does that per product, including how many orders a month a Shopify plan needs to pay for itself (US fees). Would it help with a comparison piece? Our free calculator is Etsy-only: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Happy to send a free copy, no obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** e-commerce platform reviews and comparisons (UK/US), 8.71K subs, blog; "no Shopify-vs-Etsy fee piece seen" (research), hence "don't seem to"; affiliate and advertising disclosures (R2 #9; https://www.stylefactoryproductions.com).
+
+**Follow-up (day 7):**
+> Hello, following up once on the Etsy vs Shopify fee idea. The review copy is yours if it helps; no reply needed otherwise. Arman, MarginKite
+
+---
+
+### B3-10. Colorfully Sarah
+
+**Channel:** YouTube business email, **owner reveals**
+**Subject:** Etsy and your own shop, side by side *(36 characters)*
+
+> Hi Sarah,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing makers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> You grew from Etsy to your own Shopify shop. Our $12 Seller Profit Tracker shows Etsy and Shopify fees side by side for any product, and how many orders a month a Shopify plan needs to pay for itself. Free Etsy fee calculator: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Want a free copy? No obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** cross-stitch pattern maker who grew from Etsy to her own Shopify shop; 52.4K subs; audience of aspiring makers; brand-sponsored trip 2026-09 (R2 #10; https://youtube.com/@colorfullysarah).
+
+**Follow-up (day 7):**
+> Hi Sarah, one short follow-up. The review copy offer stands if you'd like to try the Etsy vs Shopify view; no reply needed otherwise. Arman, MarginKite
+
+---
+
+### B3-11. McKenna Beverly
+
+**Channel:** form on the shop contact page https://beverlytemplatesco.com/pages/contact-1 (a general shop contact, not labelled for collaborations)
+**Subject (if asked):** Price and profit math for first-time Shopify brands *(51 characters)*
+
+> Hi McKenna,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Your viewers are launching their first Shopify product brands. Before launch they need the price math: our $12 Seller Profit Tracker turns materials, packaging and labour into a unit cost, then gives the price for a target margin after Shopify's card fees and plan cost. (Our free calculator is Etsy-only: https://marginkite.gumroad.com/l/free-fee-calculator)
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Free copy to review? No obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Shopify setup for small product brands, 32.9K subs, last upload 2026-10-01; Shopify affiliate link; sells Shopify themes, not a competitor (R2 #11; https://youtube.com/@McKennaBeverly). Products tab cols B–F; reverse mode for Shopify: Price Calculator D31.
+
+**Follow-up (day 7):**
+> Hi McKenna, one follow-up in case this landed in the shop inbox. Happy to send a copy; no reply needed if it's not a fit. Arman, MarginKite
+
+---
+
+### B3-12. eCommerce Badassery: guest pitch (no affiliate pitch)
+
+**Channel:** **application**: the owner submits via https://ecommercebadassery.com/podcast-guest-application/ (no email or contact page exists). Paste the text below into the form's pitch or topic fields.
+**Proposed topic:** What Etsy and Shopify fees really cost a small seller, with worked numbers
+
+> Hi Jessica,
+>
+> I'm Arman from MarginKite, a small shop making Google Sheets and Excel profit tools for Etsy and Shopify sellers. AI helps us build them, and every formula is tested against worked examples.
+>
+> Your resources page already lists costing tools such as Craftybase and Katana, so margins clearly matter to your listeners. Episode idea: "What Etsy and Shopify fees really cost a small seller, with worked numbers."
+>
+> What we'd cover:
+> - Every fee on one real-sized order, Etsy vs Shopify
+> - Why fixed per-order fees cost low-price items more
+> - Offsite Ads and refunds that never come back
+> - How many orders a month a Shopify plan needs to pay for itself
+>
+> I'd bring the worked examples and could share a free fee calculator with your listeners.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Shopify and Klaviyo store owners; 405 episodes (Apple), latest 2026-10-13; resources page lists Craftybase, Inventora and Katana with an affiliate disclosure (R2 #12; https://ecommercebadassery.com/resources/). The talking points match facts already worked out in `marketing/email/lite-followup-sequence.md` (fixed fees; Offsite Ads $5.84 on the lite sample) and the Price Calculator break-even. "Refunds that never come back" is fair because the listing fee is never credited (build.py `RULE_REFUND_LISTING`). **Owner decision:** who would be the guest and speak on air. The pitch is signed by Arman.
+
+**Follow-up:** applications usually don't take follow-ups; send none unless she replies.
+
+---
+
+### B3-13. Ecommerce Coffee Break (Claus Lauter)
+
+**Channel:** email hello@ecommercecoffeebreak.com (public rate card, so no rates request)
+**Subject:** An Etsy vs Shopify fee tool for your readers *(44 characters)*
+
+> Hi Claus,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Your readers are mostly US merchants, many under $1M. For those selling on Shopify and Etsy, our $12 Seller Profit Tracker shows the fees side by side and how many orders a month a Shopify plan needs to pay for itself. (It doesn't cover Amazon or TikTok Shop.) Free Etsy calculator: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> I've seen your rate card; we're starting with affiliate partners. Would an editorial mention or a podcast spot be possible? If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** newsletter twice a week, #281 on 2026-10-22; sponsor page says "15,000+" subscribers, 85% US, 62% of readers' businesses under $1M; covers Shopify, Amazon and TikTok Shop sellers; public prices from $480 for 4 issues (R2 #13 and Paid options; https://ecommercecoffeebreak.com/email-newsletter-sponsorship/). No review-copy line, to stay under 150 words with the two asks; **owner may swap the podcast question for "Can I send a free copy?"**
+
+**Follow-up (day 7):**
+> Hi Claus, one follow-up on a possible mention. Happy to send the tracker for a look; no reply needed if it's not a fit. Arman, MarginKite
+
+---
+
+### B3-14. Winning With Shopify (Spec agency)
+
+**Channel:** form https://wwspodcast.com/sponsor-the-show (or https://wwspodcast.com/contact)
+**Subject (if asked):** A margins tool for your partner offers *(38 characters)*
+
+> Hello Winning With Shopify team,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing sellers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Your episodes talk margins and inventory with Shopify owners. Our $12 Seller Profit Tracker shows profit per product after Shopify's card fees and plan cost (US rates), side by side with Etsy. Could it fit your partner-offers page, or a short guest segment? Free Etsy calculator: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** Shopify owner interviews about margins and inventory; 2.41K subs; latest 2026-10-21; UK host with a US audience; /partner-offers page; sponsor packs with no public prices (R2 #14; https://wwspodcast.com). No review-copy line, for length; two asks folded into one question.
+
+**Follow-up (day 7):**
+> Hello, following up once on the partner-offers idea. Happy to send the tracker for a look; no reply needed otherwise. Arman, MarginKite
+
+---
+
+### B3-15. Sun Milk (Ashley)
+
+**Channel:** email hello@sunmilkshop.com (a shop contact, not labelled for collaborations)
+**Subject:** A profit sheet for makers with their own shop *(45 characters)*
+
+> Hi Ashley,
+>
+> I'm Arman from MarginKite. We make Google Sheets and Excel tools showing makers what they keep after fees (AI helps us build them; every formula is tested against worked examples).
+>
+> Your vlogs show an embroidery brand selling from its own site. Our $12 Seller Profit Tracker turns materials, packaging and labour into a unit cost and tracks profit per order for Shopify and Etsy shops, with a monthly dashboard. To be clear, it doesn't log market sales. Free Etsy calculator: https://marginkite.gumroad.com/l/free-fee-calculator
+>
+> If you'd like to recommend the tracker, just reply "yes" and I'll set up your personal affiliate link: 40% per sale (about $3.86 after fees), paid automatically by Gumroad. If you share it, please label it as an affiliate link, per FTC rules. If you prefer flat-fee sponsorships, I'd be glad to see your rates too.
+>
+> Free copy to try? No obligation.
+>
+> Arman, MarginKite
+> marginkite.shop@gmail.com
+
+**Notes:** embroidery brand-owner vlogs, own shop and markets, 24K subs, last upload 2026-07-06; Amazon storefront affiliate (R2 #15; https://youtube.com/@sunmilkshop). The research's "Orders Log and Expenses track both" (shop and markets) is **not** accurate: the Orders Log takes Etsy or Shopify orders only (build.py platform list), so the message says so. Whether her site runs on Shopify is unverified (the /pages/ URL pattern suggests it); **owner: check before sending.**
+
+**Follow-up (day 7):**
+> Hi Ashley, one short follow-up. The review copy is yours if useful; no reply needed if it's not a fit. Arman, MarginKite
+
+---
+
+### Batch 3 checklist
+
+- [x] 15 drafts (14 messages + 1 guest application); no skips needed in the top 15; skipped research rows noted above.
+- [x] Shopify angle and the "free calculator is Etsy-only" note in Shopify messages; US fees stated for likely non-US partners.
+- [x] Rate card acknowledged for #4 and #13 (public prices); flat-fee line elsewhere; no affiliate pitch in #12.
+- [x] Each message has one sourced reference in its notes line, the AI clause and "tested against worked examples".
+- [ ] Owner reveals YouTube emails for #6, #7 and #10; owner submits #12's application.
+- [ ] Owner checks the flagged lines (#4, #15) and approves each message.
