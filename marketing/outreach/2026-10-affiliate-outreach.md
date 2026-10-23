@@ -25,8 +25,8 @@
 | 4 | Gold City Ventures (Julie Berninger, Cody Berman) | Contact page / team email | https://goldcityventures.com/contact/ (team [at] goldcityventures [dot] com, partly unverified) | draft |
 | 5 | Heather Johnson, HeatherXStudio | Email | hello@heatherxstudio.com | SENT 2026-10-25 (reply-yes wording) |
 | 6 | Grete Creates | Email | hello@gretecreates.com | draft |
-| 7 | Emily Odio-Sutton | YouTube business email | **owner reveals email** (YouTube About, CAPTCHA) | draft |
-| 8 | Arriell Johnson | YouTube business email | **owner reveals email** (YouTube About, CAPTCHA) | draft |
+| 7 | Emily Odio-Sutton | Email (owner revealed from YouTube) | emily@ecommemily.com | SENT 2026-10-25 (reply-yes wording) |
+| 8 | Arriell Johnson | Email (owner revealed from YouTube) | arriell@arrielljohnson.com | SENT 2026-10-25 (reply-yes wording; 'those don't cover' softened to 'adds something different to that kit') |
 | 9 | Mark Tew, Not Your Dad's CPA | Email (owner provided) | mark@notyourdadscpa.com | SENT 2026-10-25 (reply-yes wording) |
 
 Follow-up rule: at most **one** follow-up, 7 days after the first message, only if there's no reply. Then stop. A "no" or "not now" ends it; we never follow up after a decline.
