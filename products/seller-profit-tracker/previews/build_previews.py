@@ -502,6 +502,150 @@ def images(t: Book, lite: Book):
     return out
 
 
+# ------------------------------------------------------------------ Creative Market variant (3:2 landscape)
+CM_W, CM_H = 1820, 1214
+CM_DIR = HERE / "creative-market"
+CSS_WIDE = CSS.replace(f"html, body {{ width: {SIZE}px; height: {SIZE}px;",
+                       f"html, body {{ width: {CM_W}px; height: {CM_H}px;") + f"""
+body.wide {{ flex-direction: row; padding: 70px 80px; gap: 64px; }}
+body.wide.stacked {{ flex-direction: column; gap: 0; }}
+.wide .left {{ width: 600px; flex: none; display: flex; flex-direction: column; }}
+.wide .right {{ flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+               gap: 30px; min-width: 0; }}
+.wide .brand {{ font-size: 36px; gap: 18px; }}
+.wide .right .row {{ gap: 24px; }}
+.wide .brand .tag {{ font-size: 20px; padding: 7px 14px; white-space: nowrap; }}
+.wide .tabbar {{ gap: 2px; padding: 8px 12px; overflow: hidden; }}
+.wide .tab {{ font-size: 18px; padding: 6px 10px; white-space: nowrap; }}
+.wide h1 {{ font-size: 92px; margin-top: 60px; letter-spacing: -1.5px; }}
+.wide .sub {{ font-size: 38px; margin-top: 24px; }}
+.wide .left .callouts {{ flex-direction: column; align-items: flex-start; margin-top: 44px; gap: 18px; }}
+.wide .co {{ font-size: 32px; padding: 12px 26px 12px 12px; }}
+.wide .co b {{ width: 46px; height: 46px; font: 800 28px/46px {BRAND['font']}; }}
+.wide .left .note {{ margin-top: auto; text-align: left; font-size: 22px; }}
+.wide .right .note {{ font-size: 22px; }}
+.wide.stacked h1 {{ margin-top: 34px; }}
+.wide.stacked .stage {{ margin-top: 30px; gap: 26px; }}
+.wide .big {{ font-size: 92px; white-space: nowrap; }}
+.wide .list {{ font-size: 34px; }}
+.wide .list li {{ padding: 11px 0; }}
+.wide .list .k {{ min-width: 300px; }}
+.wide .left .pills {{ flex-direction: column; align-items: flex-start; margin-top: 44px; gap: 16px; }}
+.wide .pill {{ font-size: 30px; padding: 14px 28px; }}
+.wide .step {{ padding: 26px 40px; gap: 32px; }}
+.wide .step .n {{ width: 100px; height: 100px; font: 900 56px/100px {BRAND['font']}; }}
+.wide .step h3 {{ font-size: 46px; }}
+.wide .step p {{ font-size: 30px; }}
+"""
+
+
+def brand_bar(tag):
+    return f'<div class="brand">{KITE}MarginKite<span class="tag">{html.escape(tag)}</span></div>'
+
+
+def page_wide(headline, sub, right, left_extra="", note=True, tag="Google Sheets + Excel"):
+    """Two columns: text on the left (headline, sub, callouts, note), visual on the right."""
+    left = (brand_bar(tag) + f"<h1>{headline}</h1>" + (f'<div class="sub">{sub}</div>' if sub else "")
+            + left_extra + (f'<div class="note">{SAMPLE_NOTE}</div>' if note else ""))
+    return (f'<!doctype html><html><head><meta charset="utf-8">{FONT_LINK}<style>{CSS_WIDE}</style></head>'
+            f'<body class="wide"><div class="left">{left}</div><div class="right">{right}</div>'
+            + FIT_JS + "</body></html>")
+
+
+def page_wide_stacked(headline, sub, stage, note=True, tag="Google Sheets + Excel"):
+    """Full-width layout for very wide sheets: headline row on top, visual below, note under it."""
+    return (f'<!doctype html><html><head><meta charset="utf-8">{FONT_LINK}<style>{CSS_WIDE}</style></head>'
+            f'<body class="wide stacked">{brand_bar(tag)}<h1>{headline}</h1>'
+            + (f'<div class="sub">{sub}</div>' if sub else "")
+            + f'<div class="stage">{stage}' + (f'<div class="note">{SAMPLE_NOTE}</div>' if note else "")
+            + "</div>" + FIT_JS + "</body></html>")
+
+
+def images_cm(t: Book):
+    """The 7 tracker images for Creative Market at 3:2. Same content as images(), landscape layout."""
+    out = {}
+    D, PC, OL = "Dashboard", "Price Calculator", "Orders Log"
+    labels = [t.value(D, f"B{r}") for r in range(7, 19)]
+    profits = [float(t.value(D, f"J{r}") or 0) for r in range(7, 19)]
+    n_data = max(i for i, v in enumerate(profits) if v) + 1 if any(profits) else 3
+    k = max(n_data, 3) + 1
+    fee_labels = [t.value(D, f"A{r}") for r in range(31, 37)]
+    fee_vals = [float(t.value(D, f"D{r}") or 0) for r in range(31, 37)]
+
+    dash = render_range(t, D, list(range(6, 12)) + [19], ["A"] + cols("C", "K"), marks={"J19": 1})
+    out["cm-01-hero.png"] = page_wide(
+        "See your real profit after every <em>Etsy &amp; Shopify</em> fee", "MarginKite Seller Profit Tracker",
+        sheet_card(dash, t, D, max_h=330, max_w=990)
+        + f'<div class="row"><div class="panel" style="padding:16px">{column_chart(labels[:k], profits[:k], w=420, h=380)}</div>'
+          f'<div class="panel" style="padding:16px">{bar_chart(fee_labels, fee_vals, w=500, h=380)}</div></div>')
+
+    pc = render_range(t, PC, list(range(3, 28)), cols("B", "D"),
+                      marks={"C22": 1, "D22": 1, "C25": 2, "D25": 2, "D21": 3})
+    out["cm-02-price-calculator.png"] = page_wide(
+        "Etsy vs Shopify, <em>side by side</em>",
+        "One product, your price and shipping: every fee line for both platforms.",
+        sheet_card(pc, t, PC, max_h=1000, max_w=990),
+        callouts(["Every fee line", "Net profit & margin", "Shopify plan cost per order"]))
+
+    target = f"{float(t.value(PC, 'C11')) * 100:g}%"
+    rv = render_range(t, PC, list(range(3, 12)) + list(range(29, 32)), cols("B", "D"),
+                      marks={"C11": 1, "C31": 2, "D31": 2})
+    out["cm-03-reverse-margin.png"] = page_wide(
+        f"What price do I need for <em>{target} margin?</em>",
+        "Type a target margin. Reverse mode gives the item price for Etsy and for Shopify.",
+        sheet_card(rv, t, PC, max_h=1000, max_w=990),
+        callouts(["Your target margin", "Price to charge, per platform"]))
+
+    ol_cols = ["A", "B", "C", "I", "J", "K", "L"] + cols("M", "S") + ["V", "W"]
+    ol = render_range(t, OL, list(range(5, 16)) + [26], ol_cols,
+                      marks={"I8": 1, "Q8": 1, "J26": 2, "K26": 2, "R26": 2, "V6": 3})
+    out["cm-04-orders-log.png"] = page_wide_stacked(
+        "Fees &amp; profit <em>fill in automatically</em>",
+        "One row per order, 500 rows ready. Offsite Ads, refunds and fee credits included.",
+        callouts(["Offsite Ads fee with the $100 cap", "Refunds & fee credits", "Profit per order"])
+        + sheet_card(ol, t, OL, max_h=600, max_w=1660))
+
+    be = render_range(t, PC, list(range(33, 41)), cols("B", "E"), marks={"C38": 1})
+    n = t.text(PC, "C38")
+    price = t.text(PC, "C6")
+    out["cm-05-shopify-break-even.png"] = page_wide(
+        "When does <em>Shopify pay off?</em>",
+        "Compares Shopify's plan cost with the Etsy fees you'd save on each order.",
+        f'<div class="panel" style="text-align:center;width:100%"><div class="big">{n} orders / month</div>'
+        f'<div class="sub" style="margin-top:16px;font-size:32px">break-even for the sample product at {price}, '
+        f'Shopify {t.text("Settings", "C7")} billed {t.text("Settings", "C8").lower()}</div></div>'
+        + sheet_card(be, t, PC, max_h=480, max_w=990))
+
+    blurbs = {
+        "Start Here": "Setup steps, colour key, how to clear the sample data",
+        "Settings": "Dated fee table with sources; Shopify plan & billing picker",
+        "Products": "Materials, packaging & labour into a unit cost",
+        "Price Calculator": "Etsy vs Shopify, target-margin price, break-even",
+        "Orders Log": "500 rows: Offsite Ads, discounts, refunds",
+        "Expenses": "Monthly overhead, Etsy Ads spend, Shopify plan",
+        "Dashboard": "Monthly profit, top & bottom products, 2 charts",
+    }
+    items = "".join(f'<li><span class="k">{html.escape(x)}</span><span class="v">{html.escape(blurbs.get(x, ""))}</span></li>'
+                    for x in t.wb.sheetnames)
+    out["cm-06-whats-included.png"] = page_wide(
+        f"What's included: <em>{len(t.wb.sheetnames)} tabs</em>", None,
+        f'<div class="panel" style="width:100%"><ul class="list">{items}</ul></div>',
+        '<div class="pills"><span class="pill">Google Sheets + Excel 2016+</span>'
+        '<span class="pill">Instant download</span>'
+        f'<span class="pill t">US fees dated {FEES_AS_OF_TEXT}</span>'
+        '<span class="pill">No macros, no password</span></div>', note=False)
+
+    steps = [("Open your copy", "Open the .xlsx in Excel, or make a Google Sheets copy (links in the PDF guide)."),
+             ("Add your products", "Materials, packaging and labour minutes give a unit cost."),
+             ("Log your orders", "Pick platform and product; fees fill in for you."),
+             ("See your profit", "Monthly profit, margin and your best and worst products.")]
+    st = "".join(f'<div class="step"><div class="n">{i}</div><div><h3>{h}</h3><p>{p}</p></div></div>'
+                 for i, (h, p) in enumerate(steps, 1))
+    out["cm-07-how-it-works.png"] = page_wide("How it works", "Four steps to your first real profit number.",
+                                              st, note=False)
+    return out
+
+
 # ------------------------------------------------------------------ capture
 def find_browser():
     for p in EDGE_CANDIDATES:
@@ -510,14 +654,14 @@ def find_browser():
     sys.exit("Edge or Chrome not found.")
 
 
-def capture(browser, html_path: Path, png_path: Path, profile: Path):
+def capture(browser, html_path: Path, png_path: Path, profile: Path, w=SIZE, h=SIZE):
     subprocess.run([browser, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-first-run",
                     "--force-device-scale-factor=1", f"--user-data-dir={profile}",
-                    f"--window-size={SIZE},{SIZE}", "--virtual-time-budget=15000",
+                    f"--window-size={w},{h}", "--virtual-time-budget=15000",
                     f"--screenshot={png_path}", html_path.as_uri()],
                    check=True, capture_output=True, timeout=120)
     img = Image.open(png_path)
-    if img.size != (SIZE, SIZE):
+    if img.size != (w, h):
         sys.exit(f"{png_path.name}: unexpected size {img.size}")
     img.convert("RGB").save(png_path, optimize=True)
 
@@ -539,6 +683,17 @@ def main():
             capture(browser, hp, out, tmp / "profile")
             Image.open(out).resize((300, 300), Image.LANCZOS).save(THUMBS / name)
             print(f"{name}  {os.path.getsize(out) // 1024} KB")
+        # Creative Market: 3:2 landscape, tracker only (the lite isn't sold there)
+        CM_DIR.mkdir(exist_ok=True)
+        for name, doc in images_cm(t).items():
+            hp = tmp / (name[:-4] + ".html")
+            hp.write_text(doc, encoding="utf-8")
+            out = CM_DIR / name
+            capture(browser, hp, out, tmp / "profile", CM_W, CM_H)
+            if os.path.getsize(out) >= 5 * 1024 * 1024:
+                sys.exit(f"{name}: over 5 MB")
+            Image.open(out).resize((400, round(400 * CM_H / CM_W)), Image.LANCZOS).save(THUMBS / name)
+            print(f"creative-market/{name}  {os.path.getsize(out) // 1024} KB")
 
 
 if __name__ == "__main__":
