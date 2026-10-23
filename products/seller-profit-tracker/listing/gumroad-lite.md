@@ -81,7 +81,7 @@ The full MarginKite Seller Profit Tracker ($12) adds:
 + When a Shopify plan pays for itself
 + An Orders Log for 500 orders, with refunds and fee credits
 + Products, Expenses and a monthly Dashboard
-Get it here: [[PLACEHOLDER: Gumroad URL of the full tracker]]
+Get it here: https://marginkite.gumroad.com/l/profit-tracker
 
 MADE WITH AI
 MarginKite is a small shop. AI helped build this calculator, and its formulas were checked against hand-worked examples.
@@ -103,7 +103,7 @@ Etsy is named only to describe compatibility. MarginKite isn't affiliated with o
 
 Note: Gumroad shows products on Discover only after a sale, which may never happen for a $0 product. Traffic will come from the links we share (Pinterest, Reddit answers), so the name and summary matter more than tags here.
 
-**Upsell line:** the "WANT MORE THAN ONE ITEM?" block, plus the link already inside the sheet (cell B24, also a placeholder in build.py).
+**Upsell line:** the "WANT MORE THAN ONE ITEM?" block, plus the clickable link inside the sheet (cell B24).
 
 ---
 
@@ -141,7 +141,7 @@ Yes. AI helped build it, and the formulas were checked against hand-worked examp
 | Works in | Google Sheets (free account), Excel 2016+ |
 | Macros | None. Protected with no password. |
 | Region | US Etsy sellers; fees as of 2026-10-21 |
-| Placeholders | [[PLACEHOLDER: Google Sheets copy link (lite)]] · [[PLACEHOLDER: Gumroad URL of the full tracker]] (also in the sheet, cell B24) |
+| Links | Lite copy link (put on the Gumroad download page): https://docs.google.com/spreadsheets/d/1f_ZIgOi_mZsbkiiI2cuk_XiTdiTpllCazWIeVIYob00/copy · Full tracker: https://marginkite.gumroad.com/l/profit-tracker (also in the sheet, cell B24) · Support: marginkite.shop@gmail.com |
 
 ---
 

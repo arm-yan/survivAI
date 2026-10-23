@@ -164,7 +164,7 @@ Yes, partly. AI helped design and build the template, and every formula was chec
 | Locking | Sheets protected with no password; formula cells locked against accidents |
 | Sample data | Sample version: 5 products, 30 orders (Aug–Oct 2026), 3 months of expenses. BLANK version: empty, same default fees |
 | Region | US sellers; fees as of 2026-10-21 |
-| Placeholders (inside the PDF, not in the listing) | [[PLACEHOLDER: Google Sheets copy link (with sample data)]] · [[PLACEHOLDER: Google Sheets copy link (BLANK)]] |
+| Copy links | Inside the PDF only (sample-data and BLANK copies; see buyer-guide.md). Never paste them, or any Gumroad link, into this listing. Support in the listing: message us on Etsy. |
 
 ---
 

@@ -6,8 +6,8 @@ Thanks for buying. This page gets you to your first real profit number in about 
 
 Sign in to Google, open a link below, and click **Make a copy**. The copy is yours, in your own Google Drive.
 
-- **With sample data:** [[PLACEHOLDER: Google Sheets copy link (with sample data)]]
-- **BLANK:** [[PLACEHOLDER: Google Sheets copy link (BLANK)]]
+- **With sample data:** [Make a copy: tracker with sample data](https://docs.google.com/spreadsheets/d/1EC3WQBv85J-L67KSHyWd0U1QExs7YLxZFE5qH7lfojw/copy)
+- **BLANK:** [Make a copy: BLANK tracker](https://docs.google.com/spreadsheets/d/1I5_ppRbvAYHL0KJ4ljvBSgQvCpiCP-S8ohdihBVczeo/copy)
 
 **Which one?** Use the sample-data copy to see how it works, and the BLANK copy for your own shop. No link handy? Upload an .xlsx to Google Drive and choose **File > Save as Google Sheets**.
 
@@ -32,6 +32,6 @@ Open `MarginKite-Seller-Profit-Tracker.xlsx` (sample data) or `MarginKite-Seller
 
 ## 5. Help
 
-Questions or a file that won't open? Contact **[[PLACEHOLDER: support email or Etsy/Gumroad message link]]**.
+Questions or a file that won't open? Email **[marginkite.shop@gmail.com](mailto:marginkite.shop@gmail.com)**, or message us on Etsy or Gumroad, wherever you bought it.
 
 *MarginKite is a small shop. AI helped design and build this template; every formula was checked against hand-worked examples. Etsy and Shopify are named for compatibility only; MarginKite isn't affiliated with either.*

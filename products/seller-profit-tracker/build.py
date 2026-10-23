@@ -34,6 +34,7 @@ TRACKER_NAME = "MarginKite-Seller-Profit-Tracker.xlsx"
 LITE_NAME = "MarginKite-Etsy-Fee-Calculator-Lite.xlsx"
 TRACKER_BLANK_NAME = "MarginKite-Seller-Profit-Tracker-BLANK.xlsx"
 LITE_BLANK_NAME = "MarginKite-Etsy-Fee-Calculator-Lite-BLANK.xlsx"
+FULL_TRACKER_URL = "https://marginkite.gumroad.com/l/profit-tracker"
 
 FEES_AS_OF = dt.date(2026, 10, 21)
 FEES_AS_OF_TEXT = "2026-10-21"
@@ -866,9 +867,9 @@ def build_lite(ws, blank=False):
     ws["B23"].alignment = Alignment(wrap_text=True, vertical="top")
     ws.merge_cells("B23:E23")
     ws.row_dimensions[23].height = 30
-    ws["B24"] = "[PLACEHOLDER: link to the full tracker goes here before launch]"
-    ws["B24"].font = Font(bold=True, color="C00000")
-    ws["B24"].fill = WARN_FILL
+    ws["B24"] = "Get the full tracker: marginkite.gumroad.com/l/profit-tracker"
+    ws["B24"].hyperlink = FULL_TRACKER_URL  # the only link in any workbook (test S3)
+    ws["B24"].font = Font(bold=True, color="0563C1", underline="single")
     ws.merge_cells("B24:E24")
 
     ws["E5"] = "Yellow = you type"

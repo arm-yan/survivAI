@@ -20,6 +20,7 @@ import re
 import shutil
 import sys
 import tempfile
+import zipfile
 from pathlib import Path
 
 import formulas
@@ -246,6 +247,14 @@ def run_lite(tmp: Path):
 ALLOWED = {"IF", "AND", "OR", "MIN", "MAX", "SUM", "SUMIFS", "COUNTIFS", "INDEX", "MATCH", "IFERROR",
            "LARGE", "SMALL", "ROUNDUP", "DATE", "YEAR", "MONTH", "ROW", "TEXT", "ISNUMBER"}
 ALLOWED_LITERALS = {"0", "1", "2", "3", "60", "1000000000"}
+ALLOWED_URLS = {
+    "https://docs.google.com/spreadsheets/d/1EC3WQBv85J-L67KSHyWd0U1QExs7YLxZFE5qH7lfojw/copy",
+    "https://docs.google.com/spreadsheets/d/1I5_ppRbvAYHL0KJ4ljvBSgQvCpiCP-S8ohdihBVczeo/copy",
+    "https://docs.google.com/spreadsheets/d/1f_ZIgOi_mZsbkiiI2cuk_XiTdiTpllCazWIeVIYob00/copy",
+    "https://marginkite.gumroad.com/l/profit-tracker",
+    "https://marginkite.gumroad.com/l/free-fee-calculator",
+    "mailto:marginkite.shop@gmail.com",
+}
 
 
 def static_checks():
@@ -273,8 +282,19 @@ def static_checks():
                         f"disallowed: {sorted(bad_fn)}"))
         results.append(("S2", f"{path.name}: no hardcoded rates in formulas", not bad_lit,
                         f"literals: {sorted(bad_lit)}"))
-        results.append(("S3", f"{path.name}: no external links", ext == 0 and not wb._external_links,
-                        f"{ext} suspicious formulas"))
+        # Only the approved MarginKite URLs may appear as hyperlinks; no external-workbook links at all.
+        links = set()
+        with zipfile.ZipFile(path) as z:
+            ext_parts = [n for n in z.namelist() if "externalLink" in n]
+            for name in z.namelist():
+                if name.endswith(".rels"):
+                    xml = z.read(name).decode("utf-8")
+                    links |= set(re.findall(r'Target="([^"]+)"\s+TargetMode="External"', xml))
+                    links |= set(re.findall(r'TargetMode="External"\s+Target="([^"]+)"', xml))
+        bad_links = links - ALLOWED_URLS
+        results.append(("S3", f"{path.name}: no external links except approved MarginKite URLs {sorted(links)}",
+                        ext == 0 and not wb._external_links and not ext_parts and not bad_links,
+                        f"{ext} formulas with URLs/workbook refs; external parts {ext_parts}; unapproved {sorted(bad_links)}"))
 
 
 def shipped_no_errors():

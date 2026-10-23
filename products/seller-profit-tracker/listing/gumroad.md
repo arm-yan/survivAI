@@ -89,7 +89,7 @@ GOOD TO KNOW
 MADE WITH AI
 MarginKite is a small shop. AI helped design and build this template, and every formula was checked against hand-worked examples before release.
 
-Only need a quick fee check for one Etsy item? The free MarginKite Etsy Fee Calculator (Lite) is here: [[PLACEHOLDER: Gumroad URL of the free lite calculator]]
+Only need a quick fee check for one Etsy item? The free MarginKite Etsy Fee Calculator (Lite) is here: https://marginkite.gumroad.com/l/free-fee-calculator
 
 Etsy and Shopify are named only to describe compatibility. MarginKite isn't affiliated with or endorsed by either.
 ```
@@ -151,7 +151,7 @@ AI helped design and build it. Every formula was checked against hand-worked exa
 | Locking | No password; formula cells locked against accidents |
 | Sample data | Sample version: 5 products, 30 orders, 3 months of expenses. BLANK version: empty, same default fees |
 | Region | US sellers; fees as of 2026-10-21 |
-| Placeholders | [[PLACEHOLDER: Google Sheets copy link (with sample data)]] · [[PLACEHOLDER: Google Sheets copy link (BLANK)]] (both inside the PDF) · [[PLACEHOLDER: Gumroad URL of the free lite calculator]] |
+| Links | Copy links: sample data https://docs.google.com/spreadsheets/d/1EC3WQBv85J-L67KSHyWd0U1QExs7YLxZFE5qH7lfojw/copy · BLANK https://docs.google.com/spreadsheets/d/1I5_ppRbvAYHL0KJ4ljvBSgQvCpiCP-S8ohdihBVczeo/copy (both inside the PDF) · Lite: https://marginkite.gumroad.com/l/free-fee-calculator · Support: marginkite.shop@gmail.com |
 
 ---
 

@@ -45,6 +45,7 @@ code {{ font-family: Consolas, monospace; font-size: 9.5pt; background: #EEF1F5;
 mark.ph {{ background: #FFE08A; color: #7A2E00; font-weight: 800; padding: 1px 4px; border-radius: 3px;
           outline: 2px dashed {BRAND['coral']}; }}
 em {{ color: {BRAND['muted']}; }}
+a {{ color: {BRAND['teal']}; font-weight: 700; }}
 """
 
 
@@ -69,8 +70,10 @@ def main():
         subprocess.run([browser, "--headless=new", "--disable-gpu", "--no-first-run", f"--user-data-dir={tmp / 'p'}",
                         "--no-pdf-header-footer", "--virtual-time-budget=15000",
                         f"--print-to-pdf={OUT}", page.as_uri()], check=True, capture_output=True, timeout=120)
-    pages = len(re.findall(rb"/Type\s*/Page(?!s)", OUT.read_bytes()))
-    print(f"Built {OUT} ({pages} page{'s' if pages != 1 else ''})")
+    data = OUT.read_bytes()
+    pages = len(re.findall(rb"/Type\s*/Page(?!s)", data))
+    links = sorted(set(u.decode() for u in re.findall(rb"/URI\s*\(([^)]*)\)", data)))
+    print(f"Built {OUT} ({pages} page{'s' if pages != 1 else ''}); links: {links}")
 
 
 if __name__ == "__main__":
