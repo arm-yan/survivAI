@@ -34,7 +34,7 @@ Why A: on Gumroad people mostly arrive from a link we share (Pinterest, Reddit a
 
 | Key | Value |
 |---|---|
-| Format | .xlsx + 1-page PDF with Google Sheets copy link |
+| Format | 2 .xlsx (sample data + BLANK) + 1-page PDF with 2 Google Sheets copy links |
 | Works in | Google Sheets, Excel 2016+ (Windows or Mac) |
 | Tabs | 7 |
 | Orders | 500 rows |
@@ -67,16 +67,16 @@ WHAT'S INCLUDED: 7 TABS
 Start Here · Settings (dated fee table) · Products · Price Calculator · Orders Log · Expenses · Dashboard
 
 HOW IT WORKS
-1. Make your Google Sheets copy (link in the PDF) or open the .xlsx in Excel.
+1. Make your Google Sheets copy (two links in the PDF) or open an .xlsx in Excel.
 2. Settings: hourly rate, Etsy sales level, Shopify plan.
 3. Products: add what you sell.
 4. Orders Log: one row per order. Fees and profit fill in.
 5. Dashboard: read your monthly profit.
-It ships with sample data so you can see it working first; Start Here tells you which cells to clear.
+You get two versions: one with sample data to see how it works, and a BLANK one for your own shop.
 
 FORMAT
 • Instant download from Gumroad. Nothing is shipped.
-• .xlsx workbook + 1-page PDF guide with a Google Sheets "make a copy" link.
+• 3 files: the workbook with sample data (.xlsx), the same workbook BLANK (.xlsx), and a 1-page PDF guide with two Google Sheets "make a copy" links (sample data and BLANK).
 • Google Sheets (free account) or Excel 2016 or newer, Windows or Mac.
 • No macros, no add-ons, no external links. Sheets are protected with no password, so you can unlock and change anything.
 
@@ -115,10 +115,10 @@ Etsy and Shopify are named only to describe compatibility. MarginKite isn't affi
 ## FAQ (Gumroad has no FAQ field: paste under the description or use as canned answers)
 
 **1. Is anything shipped?**
-No. It's a digital download, available right after checkout and in your Gumroad library.
+No. It's a digital download, available right after checkout and in your Gumroad library: the workbook with sample data, the same workbook BLANK for your own shop, and a 1-page PDF guide.
 
 **2. Do I need Excel?**
-No. The PDF has a link that makes your own Google Sheets copy with a free Google account. Or open the .xlsx in Excel 2016 or newer.
+No. The PDF has two links (sample data and BLANK) that make your own Google Sheets copy with a free Google account. Or open either .xlsx in Excel 2016 or newer.
 
 **3. Is it for sellers outside the US?**
 Not yet. It uses US Etsy and Shopify fees. You can edit any rate in Settings, but other countries' fee rules aren't built in.
@@ -144,14 +144,14 @@ AI helped design and build it. Every formula was checked against hand-worked exa
 
 | | |
 |---|---|
-| Files | `MarginKite-Seller-Profit-Tracker.xlsx` + `MarginKite-Buyer-Guide.pdf` (1 page) |
+| Files (3) | `MarginKite-Seller-Profit-Tracker.xlsx` (sample data) + `MarginKite-Seller-Profit-Tracker-BLANK.xlsx` (empty) + `MarginKite-Buyer-Guide.pdf` (1 page) |
 | Delivery | Instant download on the Gumroad receipt page, by email, and in the buyer's Gumroad library. Nothing is shipped. |
-| Works in | Google Sheets (via the copy link in the PDF), Excel 2016+ on Windows or Mac |
+| Works in | Google Sheets (via the two copy links in the PDF), Excel 2016+ on Windows or Mac |
 | Macros / add-ons | None. No external links. |
 | Locking | No password; formula cells locked against accidents |
-| Sample data | 5 products, 30 orders, 3 months of expenses, with instructions to clear |
+| Sample data | Sample version: 5 products, 30 orders, 3 months of expenses. BLANK version: empty, same default fees |
 | Region | US sellers; fees as of 2026-10-21 |
-| Placeholders | [[PLACEHOLDER: Google Sheets "make a copy" link, inside the PDF]] · [[PLACEHOLDER: Gumroad URL of the free lite calculator]] |
+| Placeholders | [[PLACEHOLDER: Google Sheets copy link (with sample data)]] · [[PLACEHOLDER: Google Sheets copy link (BLANK)]] (both inside the PDF) · [[PLACEHOLDER: Gumroad URL of the free lite calculator]] |
 
 ---
 
@@ -173,7 +173,9 @@ AI helped design and build it. Every formula was checked against hand-worked exa
 | No macros, no add-ons, no external links | Docstring; test S3 | ✓ |
 | No password; formula cells locked | `protect()`, `fx()`; test S0 | ✓ |
 | Sample data with clear instructions | Sample constants; Start Here section | ✓ |
+| BLANK version included | `TRACKER_BLANK_NAME`, `build_tracker(blank=True)`; file in dist/ | ✓ |
+| 3 files delivered | dist/: both tracker .xlsx + `MarginKite-Buyer-Guide.pdf` | ✓ |
 | Shopify plan prices from Shopify's page; card rate: check admin | Settings Shopify rows (plan VERIFIED, card UNVERIFIED) | ✓ |
 | AI helped build it; formulas checked by hand | Start Here "Made with AI"; tests/cases.md | ✓ |
 | Free lite calculator exists | `build_lite()` | ✓ (URL placeholder) |
-| Google Sheets copy link in PDF | buyer-guide.md + owner-created link | Placeholder |
+| Two Google Sheets copy links in the PDF | buyer-guide.md section 1 + owner-created links | Placeholder |

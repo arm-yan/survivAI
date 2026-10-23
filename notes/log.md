@@ -15,3 +15,17 @@
 - Owner decision: v1 is US sellers only. Non-US fees, Etsy CSV import and tax set-aside move to v1.1.
 - Owner decision: free lite calculator is a one-tab Google Sheet on Gumroad now; a web page version in Phase 2.
 - Etsy fee values are unverified (Etsy blocked automated access). Owner will confirm them on Etsy's public fees page before launch.
+
+## 2026-10-23
+- Tickets #5–#7: built the MarginKite Seller Profit Tracker (7 tabs: Start Here, Settings, Products, Price Calculator, Orders Log, Expenses, Dashboard) and the free one-tab Etsy Fee Calculator Lite from `products/seller-profit-tracker/build.py`. Excel 2016+ and Google Sheets, no macros, no password. Tested by `tests/run_tests.py` against 25 cases in `tests/cases.md` (20 hand-worked, 5 static checks).
+- Fee rules chosen where the research was unclear: Etsy transaction and Offsite Ads fees use the price after the seller's discount (a Settings switch allows the stricter pre-discount base). The sales tax rate input feeds only the Etsy processing-fee base and is never counted as revenue. Refund credits are conservative: Etsy % fees come back in proportion; listing, $0.25 and Offsite Ads fees don't; Shopify fees never come back. Fees dated 2026-10-21; Etsy rows still UNVERIFIED.
+- Also in #5–#7: 9 preview images (7 tracker, 2 lite) in `products/seller-profit-tracker/previews/`, labelled as sample data.
+- Ticket #8: listing copy for Etsy ($12), Gumroad ($12) and Gumroad lite ($0+), plus the buyer guide, in `products/seller-profit-tracker/listing/`. Honest pricing, AI-help disclosure, fee-date disclaimer, a claim-to-feature checklist per listing. No off-Etsy links in the Etsy listing.
+- Ticket #9: BLANK versions of both workbooks (no sample data); Start Here and the lite tab now describe the Google Sheets "make a copy" flow; `build_guide.py` renders the buyer guide to `dist/MarginKite-Buyer-Guide.pdf`.
+- Ticket #10 (Tech Lead decision): the full tracker ships 3 files (sample-data .xlsx, BLANK .xlsx, 1-page PDF) with TWO Google Sheets copy links in the PDF, one with sample data and one BLANK. Lite ships both .xlsx files plus ONE copy link. Listing copy and the guide are updated; the PDF was re-rendered (1 page).
+- Waiting on the owner:
+  - a brand Gmail for MarginKite;
+  - Google Sheets master copies and their "make a copy" links (tracker sample, tracker BLANK, lite), which fill the placeholders in the guide, listings and lite cell B24;
+  - Gumroad, Etsy and Pinterest accounts;
+  - checking Etsy's fee page (https://www.etsy.com/legal/fees/) so the Etsy rows can be marked VERIFIED;
+  - approval of any Etsy shop setup fee, if Etsy charges one, before opening the shop.

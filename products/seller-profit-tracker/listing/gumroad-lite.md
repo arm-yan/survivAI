@@ -34,7 +34,7 @@ Why A: "free etsy fee calculator" is the phrase people search and share. It's ho
 
 | Key | Value |
 |---|---|
-| Format | .xlsx + Google Sheets copy link |
+| Format | 2 .xlsx (example + BLANK) + 1 Google Sheets copy link |
 | Works in | Google Sheets, Excel 2016+ |
 | Tabs | 1 |
 | Fees as of | 2026-10-21 (US Etsy) |
@@ -58,13 +58,13 @@ WHAT IT DOES
 ✔ A small fee table with the date and source of each rate, so you can update it when Etsy changes fees
 
 HOW IT WORKS
-1. Open your Google Sheets copy (link after checkout) or the .xlsx in Excel.
+1. Make your Google Sheets copy (link after checkout) or open an .xlsx in Excel.
 2. Fill the yellow cells: item price, shipping charged, your shipping cost, your cost to make it, and two Y/N questions.
 3. Read total Etsy fees, net profit and margin in the blue cells.
 
 FORMAT
 • Free digital download. Nothing is shipped.
-• One-tab .xlsx + a Google Sheets "make a copy" link.
+• Two one-tab .xlsx files (one with an example item, one BLANK) + one Google Sheets "make a copy" link.
 • Google Sheets (free account) or Excel 2016 or newer.
 • No macros. Protected with no password.
 
@@ -116,7 +116,7 @@ Yes. Enter $0 at checkout. You can pay something if you want to, but it unlocks 
 Gumroad asks for it to deliver the file. We may send occasional MarginKite emails; every one has an unsubscribe link.
 
 **3. Do I need Excel?**
-No. Use the Google Sheets copy link with a free Google account, or open the .xlsx in Excel 2016 or newer.
+No. Use the Google Sheets copy link with a free Google account (just type over the example numbers), or open either .xlsx in Excel 2016 or newer.
 
 **4. Does it include Offsite Ads?**
 Yes: 15% or 12% depending on your last 12 months of Etsy sales, capped at $100 per order.
@@ -136,12 +136,12 @@ Yes. AI helped build it, and the formulas were checked against hand-worked examp
 
 | | |
 |---|---|
-| Files | `MarginKite-Etsy-Fee-Calculator-Lite.xlsx` + Google Sheets copy link |
+| Files | `MarginKite-Etsy-Fee-Calculator-Lite.xlsx` (example item) + `MarginKite-Etsy-Fee-Calculator-Lite-BLANK.xlsx` (empty) + one Google Sheets copy link (on the Gumroad download page) |
 | Delivery | Instant on the Gumroad receipt page and by email. Nothing is shipped. |
 | Works in | Google Sheets (free account), Excel 2016+ |
 | Macros | None. Protected with no password. |
 | Region | US Etsy sellers; fees as of 2026-10-21 |
-| Placeholders | [[PLACEHOLDER: Google Sheets "make a copy" link for the lite sheet]] · [[PLACEHOLDER: Gumroad URL of the full tracker]] (also in the sheet, cell B24) |
+| Placeholders | [[PLACEHOLDER: Google Sheets copy link (lite)]] · [[PLACEHOLDER: Gumroad URL of the full tracker]] (also in the sheet, cell B24) |
 
 ---
 
@@ -155,6 +155,8 @@ Yes. AI helped build it, and the formulas were checked against hand-worked examp
 | Net profit and margin | Rows 20–21 | ✓ |
 | Fee table with date and source per rate, editable | Rows 27–34, cols C–F | ✓ |
 | One tab | `build_lite_file()` creates one sheet | ✓ |
+| Two .xlsx: example + BLANK | `LITE_NAME`, `LITE_BLANK_NAME`, `build_lite(blank=True)`; both in dist/ | ✓ |
+| One Google Sheets copy link | Tech Lead decision (Ticket #10); lite tab "HOW TO OPEN" rows 37–41 | Placeholder |
 | Fees as of 2026-10-21, unverified | B2 text; Status "UNVERIFIED" | ✓ |
 | Sales tax, discounts not modeled | B35 note | ✓ |
 | Refunds, Shopify not in lite | Absent from `build_lite()` | ✓ (stated as absent) |

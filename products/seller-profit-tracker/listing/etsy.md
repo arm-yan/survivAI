@@ -56,7 +56,7 @@ WHAT IT DOES
 - Dashboard: 12 months of orders, revenue, fees, costs, overhead and net profit, your top 3 and bottom 3 products, and 2 charts (net profit by month, where your fees went)
 
 WHAT'S INCLUDED (7 tabs)
-1. Start Here: setup steps, colour key, how to clear the sample data
+1. Start Here: setup steps, colour key, sample-data and BLANK versions explained
 2. Settings: dated fee table with source and status for every rate; Shopify plan, billing and payment provider pickers
 3. Products: unit cost from materials, packaging and labour
 4. Price Calculator: Etsy vs Shopify, target-margin price, Shopify break-even
@@ -65,16 +65,16 @@ WHAT'S INCLUDED (7 tabs)
 7. Dashboard: monthly profit, top and bottom products, 2 charts
 
 HOW IT WORKS
-1. Make your copy in Google Sheets (link in the included PDF), or open the .xlsx in Excel.
+1. Make your copy in Google Sheets (two links in the included PDF), or open an .xlsx in Excel.
 2. Settings: your hourly rate, your Etsy sales level, your Shopify plan.
 3. Products: add what you sell. Unit cost is worked out for you.
 4. Orders Log: one row per order. Fees and profit fill in.
 5. Dashboard: read your monthly profit and margin.
-The file comes with sample data so you can see it working first. Start Here shows which cells to clear.
+You get two versions: one with sample data so you can see it working first, and a BLANK one to start fresh.
 
 FORMAT AND COMPATIBILITY
 - Instant digital download. Nothing is shipped.
-- You get: the .xlsx workbook and a 1-page PDF guide with a Google Sheets "make a copy" link.
+- You get 3 files: the workbook with sample data (.xlsx), the same workbook BLANK (.xlsx), and a 1-page PDF guide with two Google Sheets "make a copy" links (sample data and BLANK).
 - Works in Google Sheets (free Google account) and Excel 2016 or newer, Windows or Mac.
 - No macros, no add-ons, no external links. Sheets are protected with no password, so you can unlock and change anything.
 - Yellow cells are for you to type in. Blue cells are calculated and locked so you don't overwrite them by accident.
@@ -109,7 +109,7 @@ Etsy and Shopify are named only to describe what the template works with. Margin
 | 7 | profit margin | 13 | Margin is shown on every order and in reverse mode |
 | 8 | etsy seller template | 20 | How buyers describe the category |
 | 9 | etsy spreadsheet | 16 | Short, high-volume category phrase |
-| 10 | google sheets etsy | 18 | Format searchers; the copy link is in the PDF |
+| 10 | google sheets etsy | 18 | Format searchers; the copy links are in the PDF |
 | 11 | excel profit sheet | 18 | Format searchers on Excel |
 | 12 | etsy order tracker | 18 | Backs the 500-row Orders Log |
 | 13 | handmade pricing | 16 | Products tab costs materials, packaging and labour time |
@@ -128,10 +128,10 @@ Left out on purpose:
 ## FAQ (paste into the description or answer in messages; Etsy has no FAQ field)
 
 **1. Is anything shipped?**
-No. This is a digital download. After you buy, Etsy gives you the files to download.
+No. This is a digital download. After you buy, Etsy gives you 3 files: the workbook with sample data, the same workbook BLANK for your own shop, and a 1-page PDF guide.
 
 **2. Do I need Excel?**
-No. Use the Google Sheets link in the included PDF to make your own copy with a free Google account. Or open the .xlsx in Excel 2016 or newer, Windows or Mac.
+No. The included PDF has two Google Sheets links (sample data and BLANK) that make your own copy with a free Google account. Or open either .xlsx in Excel 2016 or newer, Windows or Mac.
 
 **3. Does it work outside the US?**
 Not yet. This version uses US Etsy and Shopify fees. You can edit the rates in Settings, but other countries' rules (like Etsy's Regulatory Operating Fee) aren't built in.
@@ -157,14 +157,14 @@ Yes, partly. AI helped design and build the template, and every formula was chec
 
 | | |
 |---|---|
-| Files | `MarginKite-Seller-Profit-Tracker.xlsx` + `MarginKite-Buyer-Guide.pdf` (1 page, includes the Google Sheets copy link) |
+| Files (3) | `MarginKite-Seller-Profit-Tracker.xlsx` (sample data) + `MarginKite-Seller-Profit-Tracker-BLANK.xlsx` (empty) + `MarginKite-Buyer-Guide.pdf` (1 page, two Google Sheets copy links) |
 | Delivery | Instant digital download from Etsy after purchase. Nothing is shipped. |
 | Works in | Google Sheets (free Google account), Excel 2016 or newer on Windows or Mac |
 | Macros / add-ons | None. No external links. |
 | Locking | Sheets protected with no password; formula cells locked against accidents |
-| Sample data | 5 products, 30 orders (Aug–Oct 2026), 3 months of expenses; Start Here lists the ranges to clear |
+| Sample data | Sample version: 5 products, 30 orders (Aug–Oct 2026), 3 months of expenses. BLANK version: empty, same default fees |
 | Region | US sellers; fees as of 2026-10-21 |
-| Placeholder | [[PLACEHOLDER: Google Sheets "make a copy" link, inside the PDF]] |
+| Placeholders (inside the PDF, not in the listing) | [[PLACEHOLDER: Google Sheets copy link (with sample data)]] · [[PLACEHOLDER: Google Sheets copy link (BLANK)]] |
 
 ---
 
@@ -192,9 +192,11 @@ Yes, partly. AI helped design and build the template, and every formula was chec
 | Protected with no password; formula cells locked | `protect()`, `fx()`; test S0 | ✓ |
 | Yellow = type, blue = calculated | `INPUT_FILL`, `FORMULA_FILL`; Start Here colour key | ✓ |
 | Sample data, with ranges to clear | `SAMPLE_PRODUCTS`, `sample_orders()`, `SAMPLE_EXPENSES`; Start Here "Delete the sample data" | ✓ |
+| BLANK version included, same fees, no sample data | `TRACKER_BLANK_NAME`, `build_tracker(blank=True)`; file in dist/ | ✓ |
+| 3 files delivered | dist/: both tracker .xlsx + `MarginKite-Buyer-Guide.pdf` (build_guide.py) | ✓ |
 | Sales tax left out of revenue | Orders Log subtitle; Start Here "Sales tax" | ✓ |
 | Shopify card rate: check your admin | Settings Card % rows marked UNVERIFIED with that note | ✓ |
 | Etsy rates unverified (line a) | Status "UNVERIFIED" on Etsy rows | ✓ |
 | AI helped build it; formulas checked against hand-worked examples | Start Here "Made with AI"; tests/cases.md | ✓ |
-| Google Sheets "make a copy" link in the PDF | Not in build.py. It comes from the buyer guide (this ticket) plus a link the owner creates | Placeholder |
+| Two Google Sheets copy links in the PDF | buyer-guide.md section 1; Start Here "Open it"; links created by the owner | Placeholder |
 | Not included: CSV import, non-US fees, tax set-aside | Absent from build.py; v1.1 per notes/log.md | ✓ (stated as absent) |
