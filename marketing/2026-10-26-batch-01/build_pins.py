@@ -13,11 +13,17 @@ How it works:
   3. Each 1000x1500 (2:3) pin is laid out in HTML in the MarginKite style (palette and
      fonts copied from products/seller-profit-tracker/previews/build_previews.py) and
      captured with headless Edge.
+  4. Every pin shows a drawn laptop or phone (HTML/CSS only, no images) whose screen is a
+     crop of the REAL workbook: a copy of the built lite or tracker file with the pin's
+     example inputs, evaluated by the formula engine and rendered with the previews'
+     render_range(). The key on-screen cells are asserted equal to the card's numbers.
+     236 px feed-size copies go to _thumbs/ (git-ignored) for the readability check.
 """
 
 from __future__ import annotations
 
 import html
+import re
 import subprocess
 import sys
 import tempfile
@@ -33,8 +39,14 @@ sys.path.insert(0, str(PRODUCT))
 sys.path.insert(0, str(PRODUCT.parent / "brand"))
 from build import FEE_ROWS, FEES_AS_OF_TEXT  # noqa: E402
 from mark import GAP_RATIO, SORA_LINK, mark_svg, wordmark_css  # noqa: E402  (logo defined once)
+sys.path.insert(0, str(PRODUCT / "previews"))
+from build import LITE_NAME, TRACKER_NAME  # noqa: E402
+from build_previews import FIT_JS, Book, cols, render_range  # noqa: E402  (same sheet renderer as the previews)
+from openpyxl import load_workbook  # noqa: E402
 
 OUT = HERE / "pins"
+THUMBS = HERE / "_thumbs"
+DIST = PRODUCT / "dist"
 W, H = 1000, 1500
 EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
@@ -302,20 +314,71 @@ h1 em {{ font-style: normal; color: {BRAND['teal']}; }}
 .cta.teal {{ background: {BRAND['teal']}; }}
 .foot {{ position: absolute; left: 40px; right: 40px; bottom: 22px; text-align: center; font-size: 19px; color: #7D828C; line-height: 1.3; }}
 .note {{ font-size: 26px; color: {BRAND['muted']}; font-weight: 600; line-height: 1.3; }}
+/* ---- warm background shapes and device mockups */
+body > * {{ position: relative; z-index: 1; }}
+.blob {{ position: absolute; border-radius: 50%; z-index: 0; }}
+.blob.t {{ width: 640px; height: 640px; right: -230px; top: 300px; background: {BRAND['teal']}; opacity: .09; }}
+.blob.c {{ width: 520px; height: 520px; left: -230px; bottom: 170px; background: {BRAND['coral']}; opacity: .10; }}
+.card {{ position: relative; z-index: 1; }}
+.stage {{ gap: 22px; }}
+body.ph .card {{ padding: 26px 40px; }}
+body.ph .big {{ font-size: 124px; }}
+body.ph .bigcap {{ font-size: 30px; }}
+body.ph .two .card {{ padding: 24px 18px; }}
+body.ph .two .n {{ font-size: 84px; }}
+.side {{ display: flex; align-items: center; }}
+.side .col {{ flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 20px; position: relative; z-index: 1; }}
+.side .dev {{ flex: none; margin-left: -36px; z-index: 2; transform: rotate(4deg); }}
+.side .col .card {{ padding: 24px 72px 24px 30px; }}
+.side .line {{ font-size: 26px; padding: 10px 0; }}
+.side .line .k small {{ font-size: 20px; }}
+.side .line.tot .v {{ font-size: 38px; }}
+.side .note {{ font-size: 23px; padding-right: 50px; }}
+.below {{ align-self: flex-end; margin-top: -30px; margin-right: -6px; z-index: 2; transform: rotate(-3deg); }}
+body.lap .card {{ padding: 20px 34px; }}
+body.lap .line {{ font-size: 30px; padding: 8px 0; }}
+body.lap .line .k small {{ font-size: 22px; }}
+body.lap .two .card {{ padding: 20px 16px; }}
+body.lap .two .n {{ font-size: 76px; }}
+body.lap .big {{ font-size: 112px; }}
+body.lap .bigcap {{ font-size: 30px; }}
+body.lap .list li {{ font-size: 32px; padding: 11px 0 11px 60px; }}
+body.lap .list li::before {{ top: 10px; }}
+body.lap .list li small {{ font-size: 24px; }}
+.phone {{ width: 320px; height: 550px; background: #1C2128; border-radius: 42px; padding: 12px;
+          box-shadow: 0 28px 60px rgba(31,58,95,.30), 0 4px 10px rgba(0,0,0,.14); }}
+.phone .scr {{ width: 100%; height: 100%; background: #fff; border-radius: 31px; overflow: hidden;
+               padding: 26px 8px 8px; display: flex; justify-content: center; align-items: center; }}
+.laptop {{ width: 500px; }}
+.laptop .lid {{ background: #1C2128; border-radius: 22px 22px 6px 6px; padding: 15px 15px 17px; }}
+.laptop .scr {{ background: #fff; height: 250px; border-radius: 3px; overflow: hidden; padding: 8px;
+                display: flex; justify-content: center; align-items: flex-start; }}
+.laptop .base {{ position: relative; height: 22px; margin: 0 -40px; background: #C9CED6; border-radius: 0 0 26px 26px;
+                 box-shadow: 0 26px 50px rgba(31,58,95,.26); }}
+.laptop .base::before {{ content: ""; position: absolute; left: 50%; top: 0; width: 120px; height: 8px; margin-left: -60px;
+                         background: #B1B7C0; border-radius: 0 0 8px 8px; }}
+.fit {{ transform-origin: top left; }}
+table.sheet {{ border-collapse: collapse; table-layout: fixed; font-family: Arial, 'Segoe UI', sans-serif; font-size: 15px; color: #000; }}
+table.sheet td {{ height: 24px; padding: 2px 5px; white-space: nowrap; overflow: visible; position: relative;
+                 border: 1px solid #ECECEC; vertical-align: middle; }}
+table.sheet tr.hdr td, table.sheet td.rn, table.sheet td.corner {{ background: #F1F3F4; color: #5F6368;
+                 text-align: center; font-size: 13px; border-color: #D9D9D9; }}
+table.sheet tr.gap td {{ height: 14px; background: #FAFAFA; font-size: 12px; color: #999; }}
 """
 
 LITE_CTA = "Free Etsy fee calculator (Google Sheets + Excel)"
 FULL_CTA = "MarginKite Seller Profit Tracker - $12"
 
 
-def page(kicker, headline, sub, stage, cta, cta_teal=True, tag="US Etsy sellers"):
-    return (f'<!doctype html><html><head><meta charset="utf-8">{FONT_LINK}<style>{CSS}</style></head><body>'
+def page(kicker, headline, sub, stage, cta, cta_teal=True, tag="US Etsy sellers", body=""):
+    return (f'<!doctype html><html><head><meta charset="utf-8">{FONT_LINK}<style>{CSS}</style></head>'
+            f'<body class="{body}"><div class="blob t"></div><div class="blob c"></div>'
             f'<div class="brand">{MARK}<span class="wm">MarginKite</span><span class="tag">{html.escape(tag)}</span></div>'
             f'<div class="kicker">{kicker}</div><h1>{headline}</h1>'
             + (f'<div class="sub">{sub}</div>' if sub else "")
             + f'<div class="stage">{stage}</div>'
             f'<div class="cta{" teal" if cta_teal else ""}">{html.escape(cta)}</div>'
-            f'<div class="foot">{html.escape(FOOT)}</div></body></html>')
+            f'<div class="foot">{html.escape(FOOT)}</div>{FIT_JS}</body></html>')
 
 
 def line(k, v, cls="", small=""):
@@ -323,7 +386,139 @@ def line(k, v, cls="", small=""):
     return f'<div class="line {cls}"><span class="k">{k}{s}</span><span class="v">{v}</span></div>'
 
 
-def pins(ex):
+def fitted(table_html, maxw, maxh):
+    return f'<div><div class="fit" data-maxw="{maxw}" data-maxh="{maxh}">{table_html}</div></div>'
+
+
+def phone(table_html):
+    return f'<div class="phone"><div class="scr">{fitted(table_html, 288, 502)}</div></div>'
+
+
+def laptop(table_html):
+    return (f'<div class="laptop"><div class="lid"><div class="scr">{fitted(table_html, 454, 234)}</div></div>'
+            '<div class="base"></div></div>')
+
+
+def side(cards, device):
+    """Cards on the left, a phone overlapping their right edge."""
+    return f'<div class="side"><div class="col">{cards}</div><div class="dev">{device}</div></div>'
+
+
+def below(device):
+    """A laptop under the cards, overlapping the card above."""
+    return f'<div class="below">{device}</div>'
+
+
+def sheet(book, sheet_name, rows, columns, marks, headers):
+    t = render_range(book, sheet_name, rows, columns, marks=marks, headers=headers)
+    return re.sub(r'<span class="badge">[^<]*</span>', "", t)  # outline the key cells, no numbered badges
+
+
+def screens(ex, tmp: Path):
+    """Evaluate copies of the real workbooks with each pin's example inputs and crop the relevant view."""
+    lite_src, trk_src = DIST / LITE_NAME, DIST / TRACKER_NAME
+    LS = "Etsy Fee Calculator"
+    PC = "Price Calculator"
+
+    def lite(tag, item, ship, offsite="N", over10k="N", ship_cost=None, make=None):
+        wb = load_workbook(lite_src)
+        ws = wb[LS]
+        for cell, v in (("C5", item), ("C6", ship), ("C7", ship_cost), ("C8", make), ("C9", offsite), ("C10", over10k)):
+            ws[cell] = v
+        path = tmp / f"lite-{tag}.xlsx"
+        wb.save(path)
+        return Book(path)
+
+    def tracker(tag, calc, product=None):
+        wb = load_workbook(trk_src)
+        if product:
+            pr_ws = wb["Products"]
+            for cell, v in zip(("A10", "B10", "C10", "D10"), product):
+                pr_ws[cell] = v
+        for cell, v in calc.items():
+            wb[PC][cell] = v
+        path = tmp / f"tracker-{tag}.xlsx"
+        wb.save(path)
+        return Book(path)
+
+    def same(book, sh, cell, want, label):
+        got = book.text(sh, cell)
+        if got != want:
+            sys.exit(f"SCREEN MISMATCH {label} {sh}!{cell}: screen {got}, card {want}")
+
+    e1, e2 = ex["E1"], ex["E2"]
+    e4a = ex["E4"][0]
+    e5, costs, profit, margin = ex["E5"]
+    price, chk, pf = ex["E8"]
+    etsy_f, shop_f, save, orders = ex["E9"]
+    fee_rows = list(range(4, 19))
+    phone_lite = list(range(4, 38))  # lite tab from the inputs down, enough rows to fill the phone
+    phone_calc = list(range(3, 37))  # Price Calculator inputs, results and reverse mode
+    out = {}
+
+    b = lite("p01", 25, 5)
+    same(b, LS, "C18", usd(e1["Total Etsy fees"]), "P01")
+    same(b, LS, "C15", usd(e1["Transaction fee"]), "P01")
+    same(b, LS, "C16", usd(e1["Payment processing"]), "P01")
+    out["P01"] = phone(sheet(b, LS, phone_lite, ["B", "C"], {"C18": 1}, False))
+
+    b = lite("p02", 25, 5, offsite="Y")
+    same(b, LS, "C17", usd(e2["Offsite Ads fee"]), "P02")
+    same(b, LS, "C18", usd(e2["Total Etsy fees"]), "P02")
+    out["P02"] = laptop(sheet(b, LS, fee_rows, ["B", "C"], {"C17": 1, "C18": 1}, True))
+
+    b = lite("p03", 22, 8)  # a $30 order whose shipping line is the pin's $8
+    same(b, LS, "C6", "$8.00", "P03")
+    out["P03"] = laptop(sheet(b, LS, fee_rows, ["B", "C"], {"C6": 1}, True))
+
+    b = lite("p04", 4, 0)
+    same(b, LS, "C18", usd(e4a["Total Etsy fees"]), "P04")
+    out["P04"] = phone(sheet(b, LS, phone_lite, ["B", "C"], {"C18": 1}, False))
+
+    b = Book(lite_src)  # the free calculator exactly as shipped (its own example item)
+    same(b, LS, "C18", usd(e5["Total Etsy fees"]), "P05")
+    same(b, LS, "C20", usd(profit), "P05")
+    same(b, LS, "C21", pct(margin, 1), "P05")
+    out["P05"] = phone(sheet(b, LS, phone_lite, ["B", "C"], {"C18": 1, "C20": 1, "C21": 1}, False))
+    out["P11"] = laptop(sheet(b, LS, list(range(26, 35)), cols("B", "F"), {}, True))
+
+    b = lite("p06", 800, 0, offsite="Y")
+    same(b, LS, "C17", usd(OFF_CAP), "P06")
+    out["P06"] = laptop(sheet(b, LS, fee_rows, ["B", "C"], {"C17": 1}, True))
+
+    b = lite("p07", 50, 0, offsite="Y")
+    same(b, LS, "C17", "$7.50", "P07")
+    out["P07"] = laptop(sheet(b, LS, fee_rows, ["B", "C"], {"C10": 1, "C17": 1}, True))
+
+    b = lite("p09", 30, 0)
+    same(b, LS, "C18", usd(e1["Total Etsy fees"]), "P09")
+    same(b, LS, "C15", usd(e1["Transaction fee"]), "P09")
+    out["P09"] = phone(sheet(b, LS, phone_lite, ["B", "C"], {"C18": 1}, False))
+
+    # Price Calculator with the P08 inputs: a $10 product, $5 shipping cost and charged, 30% target.
+    b = tracker("p08", {"C4": "Example item", "C6": float(price), "C7": 5, "C8": 5, "C9": "N", "C11": 0.30},
+                product=("Example item", 10, 0, 0))
+    same(b, PC, "C31", usd(price), "P08")
+    same(b, PC, "C22", usd(chk["Total Etsy fees"]), "P08")
+    same(b, PC, "C25", usd(pf), "P08")
+    same(b, PC, "C26", pct(pf / (price + 5), 1), "P08")
+    out["P08"] = phone(sheet(b, PC, phone_calc, ["B", "C"],
+                             {"C25": 1, "C26": 1, "C31": 1}, False))
+
+    # Price Calculator break-even box with the $25 + $5 order.
+    b = tracker("p10", {"C6": 25, "C7": 5, "C9": "N"})
+    same(b, PC, "C34", usd(etsy_f), "P10")
+    same(b, PC, "C35", usd(shop_f), "P10")
+    same(b, PC, "C36", usd(save), "P10")
+    same(b, PC, "C38", str(orders), "P10")
+    out["P10"] = phone(sheet(b, PC, list(range(6, 40)), ["B", "C"], {"C38": 1}, False))
+
+    b = Book(trk_src)  # Dashboard with the shipped sample data (the card quotes no sample numbers)
+    out["P12"] = laptop(sheet(b, "Dashboard", list(range(6, 12)) + [19], ["A"] + cols("C", "K"), {"J19": 1}, True))
+    return out
+
+
+def pins(ex, scr):
     e1, e2 = ex["E1"], ex["E2"]
     t3, p3 = ex["E3"]
     e4a, e4b = ex["E4"]
@@ -335,14 +530,14 @@ def pins(ex):
     out["P01-where-your-30-etsy-order-goes.png"] = page(
         "Etsy fees, worked out", "Where your <em>$30</em> Etsy order goes",
         "$25 item + $5 shipping, no Offsite Ad.",
-        '<div class="card">'
+        side('<div class="card">'
         + line("Listing fee", usd(LISTING), small="per item sold")
         + line("Transaction fee", usd(e1["Transaction fee"]), small=f"{pr(TXN)} of item + shipping")
         + line("Payment processing", usd(e1["Payment processing"]), small=f"{pr(PROC_PCT)} of $30 + {usd(PROC_FIXED)}")
         + line("Etsy fees", usd(e1["Total Etsy fees"]), "tot")
         + line("Left before your costs", usd(D(30) - e1["Total Etsy fees"]), "good")
-        + '</div><div class="note">That is 11% of the order, before materials, packaging and postage.</div>',
-        LITE_CTA)
+        + '</div><div class="note">That is 11% of the order, before materials, packaging and postage.</div>', scr["P01"]),
+        LITE_CTA, body="ph")
 
     out["P02-offsite-ads-same-order.png"] = page(
         "Offsite Ads", "Same $30 order. <em>One Offsite Ad.</em>",
@@ -354,8 +549,8 @@ def pins(ex):
         + line("Offsite Ads fee", usd(e2["Offsite Ads fee"]), small="15% x $30 order total")
         + line("Everything else", usd(e1["Total Etsy fees"]), small="listing + transaction + processing")
         + line("Total Etsy fees", usd(e2["Total Etsy fees"]), "tot")
-        + "</div>",
-        LITE_CTA)
+        + "</div>" + below(scr["P02"]),
+        LITE_CTA, body="lap")
 
     out["P03-fees-on-shipping.png"] = page(
         "Pricing tip", "Etsy takes a cut of <em>shipping</em> too",
@@ -366,8 +561,8 @@ def pins(ex):
         + line("Transaction fee on shipping", usd(t3), small=f"{pr(TXN)} x $8.00")
         + line("Processing on shipping", usd(p3), small=f"{pr(PROC_PCT)} x $8.00")
         + line("Fees on the shipping line", usd(t3 + p3), "tot")
-        + "</div>",
-        LITE_CTA)
+        + "</div>" + below(scr["P03"]),
+        LITE_CTA, body="lap")
 
     out["P04-small-orders-pay-more.png"] = page(
         "Pricing tip", "Why small orders pay <em>more</em> in fees",
@@ -375,24 +570,24 @@ def pins(ex):
         '<div class="two">'
         f'<div class="card"><h3>$4 item</h3><div class="n coral">{usd(e4a["Total Etsy fees"])}</div><p>{pct(e4a["Total Etsy fees"] / 4, 2)} of the order</p></div>'
         f'<div class="card"><h3>$40 item</h3><div class="n teal">{usd(e4b["Total Etsy fees"])}</div><p>about {pct(e4b["Total Etsy fees"] / 40, 1)} of the order</p></div>'
-        '</div><div class="card">'
+        '</div>' + side('<div class="card">'
         + line("$4: 0.20 + 0.26 + 0.12 + 0.25", usd(e4a["Total Etsy fees"]), small="listing + 6.5% + 3% + fixed")
         + line("$40: 0.20 + 2.60 + 1.20 + 0.25", usd(e4b["Total Etsy fees"]), small="listing + 6.5% + 3% + fixed")
-        + '</div><div class="note">No shipping charged in either example, no Offsite Ad.</div>',
-        LITE_CTA)
+        + '</div><div class="note">No shipping charged in either example, no Offsite Ad.</div>', scr["P04"]),
+        LITE_CTA, body="ph")
 
     out["P05-free-etsy-fee-calculator.png"] = page(
         "Free download", "Free <em>Etsy fee</em> calculator",
         "Type in one item. See every fee, your profit and margin.",
-        '<div class="card">'
+        side('<div class="card">'
         + line("Order total", usd(e5["Order total (buyer pays)"]), small="example: $32 item + $6.95 shipping")
         + line("Total Etsy fees", usd(e5["Total Etsy fees"]), small="listing, transaction, processing, Offsite Ads")
         + line("Your costs", usd(costs), small="making + shipping")
         + line("Net profit", usd(profit), "good")
         + line("Margin", pct(margin, 1), "tot")
         + '</div><div class="note">One tab. Google Sheets or Excel. Made by MarginKite with help from AI. '
-          'Gumroad asks for your email.</div>',
-        LITE_CTA, tag="Free download")
+          'Gumroad asks for your email.</div>', scr["P05"]),
+        LITE_CTA, tag="Free download", body="ph")
 
     out["P06-offsite-ads-100-cap.png"] = page(
         "Offsite Ads", "The Offsite Ads fee stops at <em>$100</em>",
@@ -404,8 +599,8 @@ def pins(ex):
         + '</div><div class="card">'
         + line("Cap starts to matter above", "$666.67", small="at 15%: $100 / 0.15")
         + line("At the 12% rate", "$833.33", small="$100 / 0.12")
-        + "</div>",
-        LITE_CTA)
+        + "</div>" + below(scr["P06"]),
+        LITE_CTA, body="lap")
 
     out["P07-offsite-ads-15-vs-12.png"] = page(
         "Offsite Ads", "15% or 12%? <em>The $10k line</em>",
@@ -413,22 +608,23 @@ def pins(ex):
         '<div class="two">'
         '<div class="card"><h3>Under $10k</h3><div class="n coral">15%</div><p>$7.50 on a $50 order<br>(you can opt out)</p></div>'
         '<div class="card"><h3>$10k or more</h3><div class="n teal">12%</div><p>$6.00 on a $50 order<br>(no opt-out)</p></div>'
-        '</div><div class="note">Both capped at $100 per order. Only charged when a sale comes from an Offsite Ad.</div>',
-        LITE_CTA)
+        '</div><div class="note">Both capped at $100 per order. Only charged when a sale comes from an Offsite Ad.</div>'
+        + below(scr["P07"]),
+        LITE_CTA, body="lap")
 
     out["P08-price-for-30-percent-margin.png"] = page(
         "Pricing tip", "What to charge for a <em>30% margin</em>",
         "$10 to make, $5 to ship, $5 shipping charged, no Offsite Ad.",
         f'<div class="card" style="text-align:center"><div class="big">{usd(price)}</div>'
         '<div class="bigcap">item price for a 30% margin on Etsy</div></div>'
-        '<div class="card">'
+        + side('<div class="card">'
         + line("Order total", usd(price + 5))
         + line("Etsy fees", usd(chk["Total Etsy fees"]), small="0.20 + 1.66 + 1.02")
         + line("Your costs", "$15.00")
         + line("Profit", usd(pf), "good")
         + line("Margin", pct(pf / (price + 5), 1), "tot")
-        + "</div>",
-        FULL_CTA, cta_teal=False)
+        + "</div>", scr["P08"]),
+        FULL_CTA, cta_teal=False, body="ph")
 
     out["P09-free-shipping-same-fees.png"] = page(
         "Pricing tip", "Free shipping doesn't <em>dodge</em> Etsy fees",
@@ -436,25 +632,26 @@ def pins(ex):
         '<div class="two">'
         f'<div class="card"><h3>$25 + $5 shipping</h3><div class="n">{usd(e1["Total Etsy fees"])}</div><p>Etsy fees</p></div>'
         f'<div class="card"><h3>$30, free shipping</h3><div class="n">{usd(e1["Total Etsy fees"])}</div><p>Etsy fees</p></div>'
-        '</div><div class="card">'
+        '</div>' + side('<div class="card">'
         + line("Transaction fee", usd(e1["Transaction fee"]), small="6.5% of $30 either way")
         + line("Processing", usd(e1["Payment processing"]), small="3% of $30 + $0.25")
         + line("Listing fee", usd(LISTING))
-        + "</div>",
-        LITE_CTA)
+        + "</div>", scr["P09"]),
+        LITE_CTA, body="ph")
 
     out["P10-when-shopify-pays-off.png"] = page(
         "Etsy vs Shopify", "When does Shopify <em>pay for itself?</em>",
         "Same $30 order ($25 + $5 shipping). Shopify Basic, billed monthly.",
         f'<div class="card" style="text-align:center"><div class="big">{orders}</div>'
         '<div class="bigcap">orders a month for the plan to pay for itself</div></div>'
-        '<div class="card">'
+        + side('<div class="card">'
         + line("Etsy fees per order", usd(etsy_f))
         + line("Shopify card fees per order", usd(shop_f), small="2.9% x $30 + $0.30")
         + line("Saved per order", usd(save), "good")
         + line("Plan $27 / $2.13", f"{orders} orders", "tot")
         + '</div><div class="note">Card rate: check your Shopify admin. Leaves out the cost of bringing your own traffic. A floor, not a promise.</div>',
-        FULL_CTA, cta_teal=False)
+        scr["P10"]),
+        FULL_CTA, cta_teal=False, body="ph")
 
     out["P11-five-etsy-fees-checklist.png"] = page(
         "Checklist", "5 Etsy costs to put <em>in your price</em>",
@@ -465,8 +662,8 @@ def pins(ex):
         '<li data-n="3">Payment processing<small>3% + $0.25 per order (US)</small></li>'
         '<li data-n="4">Offsite Ads, when a sale comes from one<small>15% or 12%, capped at $100</small></li>'
         '<li data-n="5">Etsy Ads, if you run them<small>your own daily budget</small></li>'
-        "</ul></div>",
-        LITE_CTA)
+        "</ul></div>" + below(scr["P11"]),
+        LITE_CTA, body="lap")
 
     out["P12-seller-profit-tracker.png"] = page(
         "Spreadsheet template", "Your real profit on <em>every order</em>",
@@ -477,8 +674,9 @@ def pins(ex):
         '<li class="check" data-n="">Price for your target margin</li>'
         '<li class="check" data-n="">500-order log with refunds</li>'
         '<li class="check" data-n="">12-month profit dashboard</li>'
-        '</ul></div><div class="note">Google Sheets + Excel. One honest price: $12. Made by MarginKite with help from AI.</div>',
-        FULL_CTA, cta_teal=False, tag="$12")
+        '</ul></div><div class="note">Google Sheets + Excel. One honest price: $12. Made by MarginKite with help from AI.</div>'
+        + below(scr["P12"]),
+        FULL_CTA, cta_teal=False, tag="$12", body="lap")
     return out
 
 
@@ -498,12 +696,15 @@ def main():
     ex = examples()
     (HERE / "worked-examples.txt").write_text("\n".join(LOG) + "\n", encoding="utf-8")
     OUT.mkdir(exist_ok=True)
+    THUMBS.mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
-        for name, doc in pins(ex).items():
+        scr = screens(ex, tmp)
+        for name, doc in pins(ex, scr).items():
             hp = tmp / (name[:-4] + ".html")
             hp.write_text(doc, encoding="utf-8")
             capture(hp, OUT / name, tmp / "profile")
+            Image.open(OUT / name).resize((236, 354), Image.LANCZOS).save(THUMBS / name)
             print(name)
 
 
