@@ -2,5 +2,5 @@
 
 | Product | Price | Platform | Link | Status |
 |---|---|---|---|---|
-| MarginKite Seller Profit Tracker | $12 launch → $15 after ~15 reviews | Etsy, Gumroad | `products/seller-profit-tracker/dist/MarginKite-Seller-Profit-Tracker.xlsx`, `...-BLANK.xlsx`, `dist/MarginKite-Buyer-Guide.pdf`; copy: `listing/etsy.md`, `listing/gumroad.md` | Ready: waiting on owner accounts and copy links |
-| Lite fee calculator (free) | $0 / pay what you want | Gumroad | `products/seller-profit-tracker/dist/MarginKite-Etsy-Fee-Calculator-Lite.xlsx`, `...-Lite-BLANK.xlsx`; copy: `listing/gumroad-lite.md` | Ready: waiting on owner accounts and copy links |
+| MarginKite Seller Profit Tracker | $12 launch → $15 after ~15 reviews | Etsy, Gumroad | https://marginkite.gumroad.com/l/profit-tracker · files: `products/seller-profit-tracker/dist/MarginKite-Seller-Profit-Tracker.xlsx`, `...-BLANK.xlsx`, `dist/MarginKite-Buyer-Guide.pdf`; copy: `listing/etsy.md`, `listing/gumroad.md` | LIVE on Gumroad since 2026-10-23; Etsy pending |
+| Lite fee calculator (free) | $0 / pay what you want | Gumroad | https://marginkite.gumroad.com/l/free-fee-calculator · files: `products/seller-profit-tracker/dist/MarginKite-Etsy-Fee-Calculator-Lite.xlsx`, `...-Lite-BLANK.xlsx`; copy: `listing/gumroad-lite.md` | LIVE on Gumroad since 2026-10-23; Etsy pending |
