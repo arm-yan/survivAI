@@ -40,3 +40,4 @@
 - Gumroad fees (seen on payout screen): direct sales 10% + $0.50 + 2.9% + $0.30 processing; Discover sales 30%. On a $12 sale we keep about $9.65.
 - Owner approved publishing both Gumroad products on 2026-10-23 (3 tracker files confirmed in Content).
 - PUBLISHED on Gumroad 2026-10-23: https://marginkite.gumroad.com/l/profit-tracker ($12) and https://marginkite.gumroad.com/l/free-fee-calculator ($0+). Tech Lead confirmed both live (is_published true, prices 1200 / 0 cents) and listed on marginkite.gumroad.com. Content tab: an instruction line pointing to the PDF guide, files in a folder named "Your MarginKite files".
+- End-to-end test 2026-10-23 (owner, free lite): download page, .xlsx download, Google Sheets "Make a copy" and receipt email all work. The receipt cross-sells the $12 tracker automatically ("More from this creator"). The creator avatar shows a plain "A"; add the MarginKite logo.
