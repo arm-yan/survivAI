@@ -21,7 +21,7 @@
 |---|---|---|---|---|
 | 1 | Lizzie Smiley, How to Sell Your Stuff on Etsy | Email | hello@howtosellyourstuff.com | SENT 2026-10-24 (signup-link wording) |
 | 2 | Sarah Waggoner, The Handmade Shop | Email | support@sarahjwaggoner.com | SENT 2026-10-24 (signup-link wording) |
-| 3 | Simply POD with Mandy | Contact page (email shown on page) | https://studiomdesignsco.com/contact | draft |
+| 3 | Simply POD with Mandy | Email (from contact page) | mandy@studiomdesignsco.com | SENT 2026-10-25 (reply-yes wording) |
 | 4 | Gold City Ventures (Julie Berninger, Cody Berman) | Contact page / team email | https://goldcityventures.com/contact/ (team [at] goldcityventures [dot] com, partly unverified) | draft |
 | 5 | Heather Johnson, HeatherXStudio | Email | hello@heatherxstudio.com | SENT 2026-10-25 (reply-yes wording) |
 | 6 | Grete Creates | Email | hello@gretecreates.com | draft |
