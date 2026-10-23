@@ -24,7 +24,7 @@
 - Ticket #9: BLANK versions of both workbooks (no sample data); Start Here and the lite tab now describe the Google Sheets "make a copy" flow; `build_guide.py` renders the buyer guide to `dist/MarginKite-Buyer-Guide.pdf`.
 - Ticket #10 (Tech Lead decision): the full tracker ships 3 files (sample-data .xlsx, BLANK .xlsx, 1-page PDF) with TWO Google Sheets copy links in the PDF, one with sample data and one BLANK. Lite ships both .xlsx files plus ONE copy link. Listing copy and the guide are updated; the PDF was re-rendered (1 page).
 - Waiting on the owner:
-  - a brand Gmail for MarginKite;
+  - ~~a brand Gmail for MarginKite~~ done 2026-10-23: marginkite.shop@gmail.com (owner holds the password; also the support contact for the buyer guide);
   - Google Sheets master copies and their "make a copy" links (tracker sample, tracker BLANK, lite), which fill the placeholders in the guide, listings and lite cell B24;
   - Gumroad, Etsy and Pinterest accounts;
   - checking Etsy's fee page (https://www.etsy.com/legal/fees/) so the Etsy rows can be marked VERIFIED;
