@@ -18,12 +18,12 @@ from __future__ import annotations
 
 import datetime as dt
 import re
-import shutil
 import zipfile
 from pathlib import Path
 
 from openpyxl import Workbook
 from openpyxl.chart import BarChart, Reference
+from openpyxl.formatting.rule import FormulaRule
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Protection, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
@@ -32,6 +32,8 @@ HERE = Path(__file__).resolve().parent
 DIST = HERE / "dist"
 TRACKER_NAME = "MarginKite-Seller-Profit-Tracker.xlsx"
 LITE_NAME = "MarginKite-Etsy-Fee-Calculator-Lite.xlsx"
+TRACKER_BLANK_NAME = "MarginKite-Seller-Profit-Tracker-BLANK.xlsx"
+LITE_BLANK_NAME = "MarginKite-Etsy-Fee-Calculator-Lite-BLANK.xlsx"
 
 FEES_AS_OF = dt.date(2026, 10, 21)
 FEES_AS_OF_TEXT = "2026-10-21"
@@ -120,6 +122,14 @@ def protect(ws):
     p.formatCells = False
     p.selectLockedCells = False
     p.selectUnlockedCells = False
+
+
+def hide_until_filled(ws, trigger, ranges):
+    """Display-only: show calculated cells in their fill colour (invisible) while `trigger` is empty,
+    so an empty calculator doesn't show fixed fees as a loss. Values and formulas are unchanged."""
+    rule = FormulaRule(formula=[f'{trigger}=""'], font=Font(color="DDEBF7"), stopIfTrue=False)
+    for rng in ranges:
+        ws.conditional_formatting.add(rng, rule)
 
 
 def add_list_validation(ws, formula1, ranges, prompt=None):
@@ -476,7 +486,7 @@ def build_expenses(ws, expenses):
 
 
 # ================================================================ Price Calculator
-def build_calculator(ws):
+def build_calculator(ws, example=True):
     title(ws, "Price Calculator", "One item, Etsy vs Shopify side by side. Fill the yellow cells.")
     ws.column_dimensions["A"].width = 3
     ws.column_dimensions["B"].width = 46
@@ -486,12 +496,12 @@ def build_calculator(ws):
 
     label(ws, "B3", "INPUTS", bold=True, color=TEAL)
     inputs = [
-        (4, "Product", "Ceramic Mug", None, "Pick from your Products tab."),
-        (6, "Item price", 32.00, USD, ""),
-        (7, "Shipping charged to the buyer", 6.95, USD, "0 for free shipping."),
-        (8, "Your shipping cost (label + postage)", 7.20, USD, ""),
+        (4, "Product", "Ceramic Mug" if example else None, None, "Pick from your Products tab."),
+        (6, "Item price", 32.00 if example else None, USD, "Results appear once you enter a price."),
+        (7, "Shipping charged to the buyer", 6.95 if example else None, USD, "0 for free shipping."),
+        (8, "Your shipping cost (label + postage)", 7.20 if example else None, USD, ""),
         (9, "Sold via Etsy Offsite Ad? (Y/N)", "N", None, "Etsy only. Rate comes from Settings (15% or 12%)."),
-        (10, "Expected Shopify orders per month", 30, "0", "Spreads the Shopify plan cost over your orders."),
+        (10, "Expected Shopify orders per month", 30 if example else None, "0", "Spreads the Shopify plan cost over your orders."),
         (11, "Target margin (for reverse mode)", 0.30, PCT, "Profit as % of what the buyer pays."),
     ]
     for r, lab, val, fmt, note in inputs:
@@ -572,6 +582,7 @@ def build_calculator(ws):
     label(ws, "B40", "Leaves out the cost of bringing your own traffic to Shopify (ads, apps, theme) and Etsy Ads. "
                      "Treat it as a floor, not a promise.", italic=True, color="595959")
     ws.merge_cells("B40:E40")
+    hide_until_filled(ws, "$C$6", ["C14:D27", "C31:D31", "C34:C38", "B39:E39"])
     protect(ws)
 
 
@@ -579,10 +590,10 @@ def build_calculator(ws):
 D_FIRST, D_LAST = 7, 18
 
 
-def build_dashboard(ws):
+def build_dashboard(ws, first_month=dt.date(2026, 8, 1)):
     title(ws, "Dashboard", "Everything here is calculated from the Orders Log and Expenses tabs.")
     label(ws, "A4", "First month to show")
-    inp(ws["C4"], dt.date(2026, 8, 1), MONTH_FMT)
+    inp(ws["C4"], first_month, MONTH_FMT)
     label(ws, "D4", "Shows 12 months from this one.", italic=True, color="595959")
     header(ws, 6, 1, ["Month", "Label", "Orders", "Revenue (order totals)", "Refunds", "Fees", "Product cost",
                       "Shipping cost", "Overhead (Expenses)", "Net profit", "Margin"],
@@ -680,7 +691,7 @@ def build_dashboard(ws):
 
 
 # ================================================================ Start Here
-def build_start(ws):
+def build_start(ws, blank=False):
     ws.column_dimensions["A"].width = 3
     ws.column_dimensions["B"].width = 22
     ws.column_dimensions["C"].width = 95
@@ -717,9 +728,14 @@ def build_start(ws):
              "Shopify plan pays for itself, and tracks orders, refunds and overhead month by month.")
 
     section("Open it")
-    line("Google Sheets", "Upload the .xlsx to Google Drive, open it, then File > Save as Google Sheets. "
-                          "Work in that Google Sheets copy.")
-    line("Excel", "Open the .xlsx in Excel 2016 or newer (Windows or Mac). If you see 'Enable Editing', click it.")
+    line("Google Sheets", 'Sign in to your Google account, open the "make a copy" link in your PDF guide, then click '
+                          "Make a copy. The copy is yours, in your own Google Drive.")
+    line("Excel", "Open the .xlsx in Excel 2016 or newer (Windows or Mac). If you see Enable Editing, click it. "
+                  "There are no macros to allow.")
+    line("No link handy?", "Upload the .xlsx to Google Drive, open it, then choose File > Save as Google Sheets.")
+    line("Two versions", f"{TRACKER_NAME} comes with sample data so you can see it working. {TRACKER_BLANK_NAME} is "
+                         "the same workbook with no sample data, ready for your own. "
+                         + ("You are in the BLANK version." if blank else "You are in the sample-data version."))
 
     section("5 steps to your first result")
     steps = [
@@ -747,15 +763,21 @@ def build_start(ws):
     line("Unlocking", "Sheets are protected with NO password. Excel: Review > Unprotect Sheet. Google Sheets: "
                       "Data > Protect sheets and ranges, then remove the protection. Edit formulas at your own risk.")
 
-    section("Delete the sample data")
-    line("", "The file ships with 5 sample products, 30 sample orders (Aug-Oct 2026) and 3 months of expenses so you "
-             "can see it working. To start fresh, select these yellow ranges and press Delete (clear the contents; "
-             "don't delete rows):")
-    line("Orders Log", f"A{O_FIRST}:L{O_LAST}")
-    line("Expenses", f"A{E_FIRST}:F{E_LAST}")
-    line("Products", f"A{P_FIRST}:D{P_LAST} (after the orders, so nothing points at a missing product)")
-    line("Dashboard", "Set 'First month to show' (C4) to your first month.")
-    line("Price Calculator", "Pick one of your own products in C4.")
+    if blank:
+        section("This is the BLANK version")
+        line("", "No sample products, orders or expenses; Settings keep their default fees. Start with Step 1 above. "
+                 "Price Calculator results appear once you enter an item price.")
+        line("Dashboard", "Set 'First month to show' (C4) to your first month.")
+    else:
+        section("Delete the sample data")
+        line("", "The file ships with 5 sample products, 30 sample orders (Aug-Oct 2026) and 3 months of expenses so you "
+                 "can see it working. To start fresh, select these yellow ranges and press Delete (clear the contents; "
+                 "don't delete rows), or use the BLANK version instead:")
+        line("Orders Log", f"A{O_FIRST}:L{O_LAST}")
+        line("Expenses", f"A{E_FIRST}:F{E_LAST}")
+        line("Products", f"A{P_FIRST}:D{P_LAST} (after the orders, so nothing points at a missing product)")
+        line("Dashboard", "Set 'First month to show' (C4) to your first month.")
+        line("Price Calculator", "Pick one of your own products in C4.")
 
     section("Good to know")
     line("Sales tax", "Etsy collects US sales tax for you. It isn't your revenue, so leave it out of every amount.")
@@ -775,7 +797,7 @@ def build_start(ws):
 
 
 # ================================================================ Lite calculator
-def build_lite(ws):
+def build_lite(ws, blank=False):
     ws.title = "Etsy Fee Calculator"
     ws.column_dimensions["A"].width = 3
     ws.column_dimensions["B"].width = 44
@@ -789,8 +811,9 @@ def build_lite(ws):
     ws["B2"].font = Font(italic=True, color="595959")
 
     label(ws, "B4", "YOUR ITEM", bold=True, color=TEAL)
-    ins = [(5, "Item price", 32.00, USD), (6, "Shipping charged to the buyer", 6.95, USD),
-           (7, "Your shipping cost", 7.20, USD), (8, "Your cost to make it", 14.20, USD),
+    ex = (lambda v: None) if blank else (lambda v: v)
+    ins = [(5, "Item price", ex(32.00), USD), (6, "Shipping charged to the buyer", ex(6.95), USD),
+           (7, "Your shipping cost", ex(7.20), USD), (8, "Your cost to make it", ex(14.20), USD),
            (9, "Sold via Etsy Offsite Ad? (Y/N)", "N", None),
            (10, "Etsy sales in last 12 months $10,000+? (Y/N)", "N", None)]
     for r, lab, val, fmt in ins:
@@ -854,6 +877,15 @@ def build_lite(ws):
     ws["E6"].fill = FORMULA_FILL
     ws["E8"] = "Made by MarginKite with help from AI."
     ws["E8"].font = Font(italic=True, color="595959")
+
+    label(ws, "B37", "HOW TO OPEN", bold=True, color=TEAL)
+    label(ws, "B38", 'Google Sheets: sign in to Google, open the "make a copy" link from your download page, '
+                     "then click Make a copy.")
+    label(ws, "B39", "Excel: open the .xlsx in Excel 2016 or newer. There are no macros to allow.")
+    label(ws, "B40", "No link handy? Upload the .xlsx to Google Drive, then choose File > Save as Google Sheets.")
+    label(ws, "B41", f"Two versions: {LITE_NAME} has an example item; {LITE_BLANK_NAME} starts empty. "
+                     + ("This is the BLANK version." if blank else "This is the example version."))
+    hide_until_filled(ws, "$C$5", ["C13:C21"])
     protect(ws)
 
 
@@ -879,7 +911,7 @@ def save_deterministic(wb, path: Path):
     tmp.unlink()
 
 
-def build_tracker(path: Path):
+def build_tracker(path: Path, blank=False):
     wb = Workbook()
     ws_start = wb.active
     ws_start.title = "Start Here"
@@ -889,32 +921,34 @@ def build_tracker(path: Path):
     ws_ord = wb.create_sheet("Orders Log")
     ws_exp = wb.create_sheet("Expenses")
     ws_dash = wb.create_sheet("Dashboard")
-    build_start(ws_start)
+    build_start(ws_start, blank)
     build_settings(ws_set)
-    build_products(ws_prod, SAMPLE_PRODUCTS)
-    build_calculator(ws_calc)
-    build_orders(ws_ord, sample_orders(SAMPLE_PRODUCTS))
-    build_expenses(ws_exp, SAMPLE_EXPENSES)
-    build_dashboard(ws_dash)
+    build_products(ws_prod, [] if blank else SAMPLE_PRODUCTS)
+    build_calculator(ws_calc, example=not blank)
+    build_orders(ws_ord, [] if blank else sample_orders(SAMPLE_PRODUCTS))
+    build_expenses(ws_exp, [] if blank else SAMPLE_EXPENSES)
+    build_dashboard(ws_dash, FEES_AS_OF.replace(day=1) if blank else dt.date(2026, 8, 1))
     for ws, color in ((ws_start, TEAL), (ws_set, "7F7F7F"), (ws_dash, NAVY)):
         ws.sheet_properties.tabColor = color
     save_deterministic(wb, path)
 
 
-def build_lite_file(path: Path):
+def build_lite_file(path: Path, blank=False):
     wb = Workbook()
-    build_lite(wb.active)
+    build_lite(wb.active, blank)
     save_deterministic(wb, path)
 
 
 def main():
-    if DIST.exists():
-        shutil.rmtree(DIST)
-    DIST.mkdir(parents=True)
-    build_tracker(DIST / TRACKER_NAME)
-    build_lite_file(DIST / LITE_NAME)
-    print(f"Built {DIST / TRACKER_NAME}")
-    print(f"Built {DIST / LITE_NAME}")
+    # Rebuild every workbook from scratch. Other files in dist/ (the buyer-guide PDF from
+    # build_guide.py) are left alone.
+    DIST.mkdir(parents=True, exist_ok=True)
+    for old in DIST.glob("*.xlsx"):
+        old.unlink()
+    for name, fn, blank in ((TRACKER_NAME, build_tracker, False), (TRACKER_BLANK_NAME, build_tracker, True),
+                            (LITE_NAME, build_lite_file, False), (LITE_BLANK_NAME, build_lite_file, True)):
+        fn(DIST / name, blank)
+        print(f"Built {DIST / name}")
 
 
 if __name__ == "__main__":

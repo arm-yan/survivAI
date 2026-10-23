@@ -464,7 +464,7 @@ def images(t: Book, lite: Book):
         '<span class="pill">No macros, no password</span></div>', note=False)
 
     # 7 how it works
-    steps = [("Make your copy", "Open in Google Sheets (File &gt; Save as Google Sheets) or Excel."),
+    steps = [("Make your copy", "Open the link in your PDF guide and click Make a copy. Or open the .xlsx in Excel."),
              ("Add your products", "Materials, packaging and labour minutes give a unit cost."),
              ("Log your orders", "Pick platform and product; fees fill in for you."),
              ("See your profit", "Monthly profit, margin and your best and worst products.")]

@@ -67,4 +67,5 @@ Profit = order total − refund − total fees − product cost − shipping cos
 - **S2:** no numeric literals other than 0, 1, 2, 3, 60 and the tie-break 1e9 (so no hardcoded rates).
 - **S3:** no external links.
 - **S4:** shipped files with sample data evaluate with no `#` errors.
+- **S5:** the BLANK workbooks evaluate with no `#` errors on any formula cell. S1–S3 also cover the BLANK files.
 - **S0:** every sheet is protected without a password, and every formula cell is locked. S0 is reported only if it fails.

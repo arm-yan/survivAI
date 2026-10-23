@@ -35,6 +35,9 @@ HERE = Path(__file__).resolve().parent
 DIST = HERE.parent / "dist"
 TRACKER = DIST / "MarginKite-Seller-Profit-Tracker.xlsx"
 LITE = DIST / "MarginKite-Etsy-Fee-Calculator-Lite.xlsx"
+TRACKER_BLANK = DIST / "MarginKite-Seller-Profit-Tracker-BLANK.xlsx"
+LITE_BLANK = DIST / "MarginKite-Etsy-Fee-Calculator-Lite-BLANK.xlsx"
+ALL_FILES = (TRACKER, LITE, TRACKER_BLANK, LITE_BLANK)
 
 MONEY_TOL = 0.01
 PCT_TOL = 0.0001
@@ -246,7 +249,7 @@ ALLOWED_LITERALS = {"0", "1", "2", "3", "60", "1000000000"}
 
 
 def static_checks():
-    for path in (TRACKER, LITE):
+    for path in ALL_FILES:
         wb = load_workbook(path)
         n = 0
         bad_fn, bad_lit, ext = set(), set(), 0
@@ -276,7 +279,7 @@ def static_checks():
 
 def shipped_no_errors():
     """The files as shipped (with sample data) must evaluate with no #errors in any formula cell."""
-    for path in (TRACKER, LITE):
+    for path in ALL_FILES:
         g = evaluate(path)
         wb = load_workbook(path)
         bad = []
@@ -287,11 +290,12 @@ def shipped_no_errors():
                         v = g(ws.title, cell.coordinate)
                         if isinstance(v, str) and v.startswith("#"):
                             bad.append(f"{ws.title}!{cell.coordinate}={v}")
-        results.append(("S4", f"{path.name}: sample data evaluates with no errors", not bad, f"{bad[:5]}"))
+        case = "S5" if "BLANK" in path.name else "S4"
+        results.append((case, f"{path.name}: every formula cell evaluates with no errors", not bad, f"{bad[:5]}"))
 
 
 def main():
-    if not TRACKER.exists() or not LITE.exists():
+    if not all(p.exists() for p in ALL_FILES):
         sys.exit("Run build.py first.")
     static_checks()
     shipped_no_errors()
