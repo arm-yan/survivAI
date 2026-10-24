@@ -536,7 +536,7 @@ The round 2 top 15 from `research/2026-10-25-partners-round-2.md` (Ticket #22, c
 | 10 | Colorfully Sarah | Maker YouTube | **owner reveals** | https://youtube.com/@colorfullysarah, About | draft |
 | 11 | McKenna Beverly | Shopify YouTube | form (shop contact page) | https://beverlytemplatesco.com/pages/contact-1 | SENT 2026-10-25 (form: thanks message) |
 | 12 | eCommerce Badassery (Jessica Totillo Coster) | Shopify podcast | **application** (owner submits) | https://ecommercebadassery.com/podcast-guest-application/ | draft (guest pitch) |
-| 13 | Ecommerce Coffee Break (Claus Lauter) | Newsletter + podcast (public prices) | email | hello@ecommercecoffeebreak.com | SENT 2026-10-25 (email) |
+| 13 | Ecommerce Coffee Break (Claus Lauter) | Newsletter + podcast (public prices) | email | hello@ecommercecoffeebreak.com | REPLIED 2026-10-25: paid only, no affiliate. We declined politely (owner approved). Closed. |
 | 14 | Winning With Shopify (Spec agency) | Shopify podcast (no public prices) | form | https://wwspodcast.com/sponsor-the-show | SENT 2026-10-25 (sponsorship-pack form: 'We'll be in touch') |
 | 15 | Sun Milk (Ashley) | Maker YouTube | email | hello@sunmilkshop.com | SENT 2026-10-25 (email; Sun Milk confirmed on Shopify) |
 
