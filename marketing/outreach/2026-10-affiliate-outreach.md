@@ -524,21 +524,21 @@ The round 2 top 15 from `research/2026-10-25-partners-round-2.md` (Ticket #22, c
 
 | # | Partner | Type | Channel | Contact | Status |
 |---|---|---|---|---|---|
-| 1 | Living The Hustle (Jessa Bellman) | Resource blog | form | https://livingthehustle.co.uk/contact/ | draft |
-| 2 | Love Eat Travel Repeat (Janeen) | Resource blog | form (contact page) | https://loveeattravelrepeat.com/contact-us/ | draft |
-| 3 | Nancy Badillo | Resource blog | email | info@nancybadillo.com | draft |
-| 4 | Ed Codes (Eduard) | Shopify YouTube + newsletter (public prices) | email | hi@ed.codes | draft |
-| 5 | Handmade Seller Magazine | Newsletter (no public prices) | email | info@handmadeseller.com | draft |
+| 1 | Living The Hustle (Jessa Bellman) | Resource blog | form | https://livingthehustle.co.uk/contact/ | SENT 2026-10-25 (form: Submission Success) |
+| 2 | Love Eat Travel Repeat (Janeen) | Resource blog | form (contact page) | https://loveeattravelrepeat.com/contact-us/ | NOT SENT: no form or email on the contact page (only a newsletter signup); try YouTube @loveeattravelrepeat About email (owner reveals) |
+| 3 | Nancy Badillo | Resource blog | email | info@nancybadillo.com | SENT 2026-10-25 (email) |
+| 4 | Ed Codes (Eduard) | Shopify YouTube + newsletter (public prices) | email | hi@ed.codes | SENT 2026-10-25 (email) |
+| 5 | Handmade Seller Magazine | Newsletter (no public prices) | email | info@handmadeseller.com | SENT 2026-10-25 (email) |
 | 6 | Talkin With Tonio (Antonio Williams) | Shopify YouTube | **owner reveals** | https://youtube.com/@TalkinWithTonio, About | draft |
 | 7 | Shopify Success (Julia) | Shopify YouTube | **owner reveals** | https://youtube.com/@Shopify-Success, About | draft |
-| 8 | The Side Hustler (Lee Warren-Blake) | Resource blog | form | https://thesidehustler.blog/contact-us/ | draft |
-| 9 | Style Factory | Shopify YouTube + blog | form | https://www.stylefactoryproductions.com/contact | draft |
+| 8 | The Side Hustler (Lee Warren-Blake) | Resource blog | form | https://thesidehustler.blog/contact-us/ | SENT 2026-10-25 (form: thanks message) |
+| 9 | Style Factory | Shopify YouTube + blog | form | https://www.stylefactoryproductions.com/contact | SENT 2026-10-25 by email to ask@stylefactoryproductions.com (the form has a CAPTCHA) |
 | 10 | Colorfully Sarah | Maker YouTube | **owner reveals** | https://youtube.com/@colorfullysarah, About | draft |
-| 11 | McKenna Beverly | Shopify YouTube | form (shop contact page) | https://beverlytemplatesco.com/pages/contact-1 | draft |
+| 11 | McKenna Beverly | Shopify YouTube | form (shop contact page) | https://beverlytemplatesco.com/pages/contact-1 | SENT 2026-10-25 (form: thanks message) |
 | 12 | eCommerce Badassery (Jessica Totillo Coster) | Shopify podcast | **application** (owner submits) | https://ecommercebadassery.com/podcast-guest-application/ | draft (guest pitch) |
-| 13 | Ecommerce Coffee Break (Claus Lauter) | Newsletter + podcast (public prices) | email | hello@ecommercecoffeebreak.com | draft |
-| 14 | Winning With Shopify (Spec agency) | Shopify podcast (no public prices) | form | https://wwspodcast.com/sponsor-the-show | draft |
-| 15 | Sun Milk (Ashley) | Maker YouTube | email | hello@sunmilkshop.com | draft |
+| 13 | Ecommerce Coffee Break (Claus Lauter) | Newsletter + podcast (public prices) | email | hello@ecommercecoffeebreak.com | SENT 2026-10-25 (email) |
+| 14 | Winning With Shopify (Spec agency) | Shopify podcast (no public prices) | form | https://wwspodcast.com/sponsor-the-show | SENT 2026-10-25 (sponsorship-pack form: 'We'll be in touch') |
+| 15 | Sun Milk (Ashley) | Maker YouTube | email | hello@sunmilkshop.com | SENT 2026-10-25 (email; Sun Milk confirmed on Shopify) |
 
 Follow-up rule unchanged: at most one, on day 7, only if there's no reply; never after a decline.
 
