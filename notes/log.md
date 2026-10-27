@@ -71,3 +71,6 @@
 - Outreach 2026-10-25: Colorfully Sarah sent (colorfullysarahshop@gmail.com, owner revealed). Outreach round complete: 26 reached. No replies yet as of 05:40 Armenia time; the only inbox item is the Tin Teddy bounce. Follow-ups (one each) due about 2026-11-01 for batch 1 and about 2026-11-02 for batches 2-3, non-repliers only.
 - 2026-10-25: Creative Market REJECTED the shop application (no reasons given beyond 'guidelines or community standards'; they won't review future applications). Ecommerce Coffee Break replied: no affiliate or rev-share deals, paid options only (rate card). Lessons recorded in notes/lessons.md.
 - 2026-10-25: replied to Claus Lauter (Ecommerce Coffee Break), declining paid placements for now (owner approved). Contact closed; no follow-up.
+
+## 2026-10-27
+- Status check (Claude via Chrome). Gumroad all-time: lite 3 visits, 1 "sale" (the owner's test); tracker 2 visits, 0 sales; revenue $0. Pinterest: P01 published 2026-10-26, 11 still scheduled; analytics show 0 impressions (new account; Pinterest usually takes 2-6 weeks to distribute). Inbox: HeatherXStudio declined politely (2026-10-26; closed, no follow-up). No other replies; spam holds only the earlier Tin Teddy bounce. Totals: 26 contacted, 2 replies (both no), 24 pending.

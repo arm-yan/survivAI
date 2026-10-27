@@ -23,7 +23,7 @@
 | 2 | Sarah Waggoner, The Handmade Shop | Email | support@sarahjwaggoner.com | SENT 2026-10-24 (signup-link wording) |
 | 3 | Simply POD with Mandy | Email (from contact page) | mandy@studiomdesignsco.com | SENT 2026-10-25 (reply-yes wording) |
 | 4 | Gold City Ventures (Julie Berninger, Cody Berman) | Email (contact page) | team@goldcityventures.com | SENT 2026-10-25 (reply-yes wording; competitor check done: they sell courses and Canva templates, no spreadsheets) |
-| 5 | Heather Johnson, HeatherXStudio | Email | hello@heatherxstudio.com | SENT 2026-10-25 (reply-yes wording) |
+| 5 | Heather Johnson, HeatherXStudio | Email | hello@heatherxstudio.com | DECLINED 2026-10-26 (team reply: focused on current commitments). Closed; no follow-up. |
 | 6 | Grete Creates | none | gretecreates.com does not resolve (2026-10-25); identity and contact unclear | DROPPED |
 | 7 | Emily Odio-Sutton | Email (owner revealed from YouTube) | emily@ecommemily.com | SENT 2026-10-25 (reply-yes wording) |
 | 8 | Arriell Johnson | Email (owner revealed from YouTube) | arriell@arrielljohnson.com | SENT 2026-10-25 (reply-yes wording; 'those don't cover' softened to 'adds something different to that kit') |
